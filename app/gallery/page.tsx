@@ -1,12 +1,13 @@
 import { SectionHeader } from "../components/SectionHeader";
+import { AssetImage } from "../components/AssetImage";
 
 const frames = [
-  "Rug texture",
-  "Women artisans",
-  "Color sampling",
-  "Home decor",
-  "Felt toys",
-  "Export packing",
+  ["Rug texture", "/gallery/rug-texture.jpg"],
+  ["Artisan workshop", "/gallery/artisan-workshop.jpg"],
+  ["Felt texture", "/gallery/felt-texture.jpg"],
+  ["Artisan community", "/gallery/artisan-community.jpg"],
+  ["Textile display", "/gallery/textile-display.jpg"],
+  ["Color and material mood", "/showroom/custom-designs.jpg"],
 ];
 
 export default function GalleryPage() {
@@ -15,20 +16,24 @@ export default function GalleryPage() {
       <SectionHeader
         eyebrow="Gallery"
         title="An editorial mood board for material, making, and collection."
-        copy="These visual placeholders reserve space for workshop, material, lifestyle, and finished product photography."
+        copy="A visual direction for workshop process, wool texture, lifestyle settings, and finished export collections."
       />
-      <div className="mt-12 grid auto-rows-[15rem] gap-5 md:grid-cols-4">
-        {frames.map((frame, index) => (
-          <div
-            className={`image-well flex items-end p-5 shadow-[0_24px_60px_rgba(58,42,32,0.1)] ${
-              index === 0 || index === 3 ? "md:col-span-2 md:row-span-2" : ""
+      <div className="mt-12 grid auto-rows-[16rem] gap-5 md:grid-cols-4">
+        {frames.map(([frame, src], index) => (
+          <AssetImage
+            src={src}
+            alt={`${frame} representative temporary showroom visual`}
+            className={`shadow-[0_24px_60px_rgba(58,42,32,0.1)] ${
+              index === 0 || index === 3
+                ? "md:col-span-2 md:row-span-2"
+                : index === 2
+                  ? "md:row-span-2"
+                  : ""
             }`}
             key={frame}
-          >
-            <p className="relative z-10 rounded-full bg-ivory/75 px-4 py-2 text-xs uppercase tracking-[0.18em] text-walnut">
-              {String(index + 1).padStart(2, "0")} / {frame}
-            </p>
-          </div>
+            label={`${String(index + 1).padStart(2, "0")} / ${frame}`}
+            sizes="(max-width: 768px) 100vw, 25vw"
+          />
         ))}
       </div>
     </section>

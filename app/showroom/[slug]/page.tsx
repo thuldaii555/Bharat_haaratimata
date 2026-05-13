@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "@/lib/products";
+import { AssetImage } from "@/app/components/AssetImage";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -22,13 +23,15 @@ export default async function ProductDetailPage({
     <section className="section">
       <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-start">
         <div className="editorial-frame p-4">
-          <div className="image-well flex min-h-[540px] items-end p-8">
-            <p className="relative z-10 rounded-full bg-ivory/75 px-4 py-2 text-xs uppercase tracking-[0.18em] text-walnut">
-              Product Study
-            </p>
-          </div>
+          <AssetImage
+            src={product.imageSrc}
+            alt={`${product.name} representative showroom visual`}
+            className="min-h-[540px]"
+            label="Representative Product Study"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
-        <div className="panel md:mt-8">
+        <div className="showroom-panel p-8 md:mt-8 md:p-10">
           <p className="eyebrow mb-5 text-gold">{product.category}</p>
           <h1 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
             {product.name}
@@ -42,6 +45,14 @@ export default async function ProductDetailPage({
             <div>
               <dt className="eyebrow mb-2">Handmade Note</dt>
               <dd className="text-olive">{product.handmadeNote}</dd>
+            </div>
+            <div>
+              <dt className="eyebrow mb-2">Suggested Use</dt>
+              <dd className="text-olive">{product.suggestedUse}</dd>
+            </div>
+            <div>
+              <dt className="eyebrow mb-2">Customization Options</dt>
+              <dd className="text-olive">{product.customizationOptions}</dd>
             </div>
             <div>
               <dt className="eyebrow mb-2">Custom Wholesale</dt>

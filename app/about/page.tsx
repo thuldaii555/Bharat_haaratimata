@@ -1,9 +1,10 @@
 import { SectionHeader } from "../components/SectionHeader";
+import { AssetImage } from "../components/AssetImage";
 
 const values = [
-  ["Heritage", "Founded in 1999 with a focus on Nepalese wool felt craft."],
-  ["Artisans", "Women makers remain central to the production story."],
-  ["Export", "Built for buyers who need quality, continuity, and clear origin."],
+  ["Heritage", "Established in 1999 under the Nepal Government."],
+  ["Artisans", "300+ women artisans from rural Nepal remain central to production."],
+  ["Export", "A supplier, manufacturer, and exporter for wholesale felt wool buyers."],
 ];
 
 export default function AboutPage() {
@@ -11,43 +12,58 @@ export default function AboutPage() {
     <section className="section">
       <SectionHeader
         eyebrow="About"
-        title="Heritage felt craft, edited for a global design audience."
-        copy="Haaratimata Handicrafts has grown from local material knowledge into a premium export partner for buyers who value craft, consistency, and ethical sourcing."
+        title="Haaratimata Handicrafts, handmade in Nepal since 1999."
+        copy="The company supplies, manufactures, and exports felt wool products for buyers who value craft, consistency, Fair Trade focus, and responsible sourcing."
       />
       <div className="mt-14 grid gap-10 md:grid-cols-[1fr_1.05fr] md:items-center">
-        <div className="editorial-frame p-4">
-          <div className="image-well flex min-h-[470px] items-end p-7">
-            <p className="relative z-10 rounded-full bg-ivory/75 px-4 py-2 text-xs uppercase tracking-[0.18em] text-walnut">
-              Kathmandu Workshop
+        <div className="relative">
+          <div className="editorial-frame p-4">
+            <AssetImage
+              src="/artisans/women-artisans.jpg"
+              alt="Representative image of women artisans used as temporary showroom imagery"
+              className="min-h-[520px]"
+              label="Artisan Network"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div className="absolute -bottom-8 left-6 max-w-xs rounded-[1.5rem] border border-walnut/10 bg-ivory/86 p-5 shadow-[0_24px_60px_rgba(58,42,32,0.16)]">
+            <p className="small-caps text-gold">Founded 1999</p>
+            <p className="mt-2 text-sm leading-6 text-olive">
+              A registered Nepalese craft company shaped for modern wholesale
+              and export partnerships.
             </p>
           </div>
         </div>
-        <div>
+        <div className="showroom-panel p-8 md:p-10">
+          <p className="eyebrow mb-5 text-gold">Heritage Story</p>
           <div className="space-y-6 text-lg leading-8 text-olive">
             <p>
-              Founded in 1999, Haaratimata works in wool felt, shaping rugs,
-              homeware, toys, pet accessories, and custom export collections by
-              hand.
+              Founded in 1999 under the Nepal Government, Haaratimata
+              Handicrafts works in wool felt, shaping rugs, homeware, toys, pet
+              accessories, and custom export collections by hand.
             </p>
             <p>
-              The brand connects Nepalese material knowledge with a restrained
-              modern eye for wholesale buyers, interior designers, boutiques,
-              and ethical import programs.
+              The brand connects Nepalese material knowledge with 100% New
+              Zealand wool, eco-friendly biodegradable products, and a
+              restrained modern eye for wholesale buyers, interior designers,
+              boutiques, and ethical import programs.
             </p>
             <p>
               Production is human-scale, respectful, and collaborative, with
-              women artisans central to the making process.
+              more than 300 women artisans from rural Nepal central to the
+              making process.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {values.map(([title, copy]) => (
-              <div className="rounded-2xl border border-walnut/10 bg-ivory/62 p-5 shadow-sm" key={title}>
-                <p className="font-serif text-2xl text-walnut">{title}</p>
-                <p className="mt-3 text-sm leading-6 text-olive">{copy}</p>
-              </div>
-            ))}
-          </div>
         </div>
+      </div>
+      <div className="mt-16 grid gap-4 md:grid-cols-3">
+        {values.map(([title, copy]) => (
+          <div className="panel min-h-48" key={title}>
+            <div className="mb-8 h-px bg-gradient-to-r from-gold to-transparent" />
+            <p className="font-serif text-3xl text-walnut">{title}</p>
+            <p className="mt-4 text-sm leading-6 text-olive">{copy}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
