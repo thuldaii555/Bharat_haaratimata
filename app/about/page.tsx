@@ -19,10 +19,10 @@ export default function AboutPage() {
         <div className="relative">
           <div className="editorial-frame p-4">
             <AssetImage
-              src="/artisans/women-artisans.jpg"
-              alt="Representative image of women artisans used as temporary showroom imagery"
+              src="/showroom/home-decor.jpg"
+              alt="Colorful handmade rug and textile display connected to Nepalese craft"
               className="min-h-[520px]"
-              label="Artisan Network"
+              label="Nepal Craft Heritage"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>

@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   ["Home", "/"],
@@ -12,45 +15,55 @@ const navItems = [
 ] as const;
 
 export function SiteHeader() {
+  const pathname = usePathname();
+
+  function isActive(href: string) {
+    if (href === "/") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  }
+
   return (
-    <header className="sticky top-0 z-40 border-b border-walnut/10 bg-ivory/76 shadow-[0_18px_44px_rgba(58,42,32,0.08)] backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-10 lg:px-12">
-        <Link href="/" className="flex shrink-0 items-center gap-3">
-          <span className="relative h-14 w-14 overflow-hidden rounded-2xl border border-gold/30 bg-ivory shadow-sm">
+    <header className="sticky top-0 z-40 border-b border-walnut/12 bg-[linear-gradient(180deg,rgba(255,252,245,0.96),rgba(247,243,234,0.88))] shadow-[0_22px_60px_rgba(58,42,32,0.1)] backdrop-blur-2xl">
+      <div className="mx-auto flex max-w-[96rem] items-center justify-between gap-4 px-4 py-3 md:px-8 lg:px-10">
+        <Link href="/" className="group flex shrink-0 items-center">
+          <span className="relative h-[4.15rem] w-[12.9rem] overflow-hidden rounded-[1rem] border border-walnut/14 bg-ivory shadow-[0_16px_42px_rgba(58,42,32,0.12),inset_0_1px_0_rgba(255,252,245,0.95)] ring-1 ring-gold/10 transition-colors group-hover:border-gold/50 sm:h-[4.65rem] sm:w-[14.5rem] xl:h-[5.15rem] xl:w-[16rem]">
             <Image
               src="/Brand/Haaratimata-Logo.png"
               alt="Haaratimata Handicrafts logo"
               fill
-              sizes="56px"
+              sizes="(max-width: 640px) 206px, (max-width: 1280px) 232px, 256px"
               className="object-contain p-1.5"
               priority
             />
           </span>
-          <span>
-            <span className="block font-serif text-2xl leading-none text-walnut">
-              Haaratimata Handicrafts
-            </span>
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.24em] text-gold">
-              Nepal Felt Wool Exporter
-            </span>
-          </span>
         </Link>
-        <nav className="hidden items-center gap-5 rounded-2xl border border-walnut/10 bg-background/42 px-5 py-3 text-[0.76rem] uppercase tracking-[0.12em] text-olive shadow-sm lg:flex">
+        <nav className="hidden items-center rounded-[1.25rem] border border-walnut/12 bg-[linear-gradient(135deg,rgba(255,252,245,0.88),rgba(247,243,234,0.64)_52%,rgba(200,184,157,0.18))] p-1.5 text-[0.66rem] uppercase tracking-[0.15em] text-olive shadow-[0_16px_42px_rgba(58,42,32,0.08),inset_0_1px_0_rgba(255,252,245,0.9)] lg:flex">
           {navItems.map(([label, href]) => (
-            <Link className="transition-colors hover:text-walnut" href={href} key={href}>
+            <Link
+              aria-current={isActive(href) ? "page" : undefined}
+              className={`nav-link ${isActive(href) ? "nav-link-active" : ""}`}
+              href={href}
+              key={href}
+            >
               {label}
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <Link
-            aria-label="Showroom"
-            className="grid h-11 w-11 place-items-center rounded-2xl border border-walnut/15 bg-background/70 text-walnut shadow-sm"
+            aria-label="Cart"
+            className={`header-action grid h-12 w-12 place-items-center ${isActive("/showroom") ? "header-action-active" : ""}`}
             href="/showroom"
           >
-            <span className="relative h-4 w-4 border border-current border-t-0 before:absolute before:-top-1 before:left-1 before:h-2 before:w-2 before:rounded-full before:border before:border-current before:border-b-0" />
+            <span className="relative h-[1.125rem] w-[1.125rem] rounded-b-[0.2rem] border border-current border-t-0 before:absolute before:-top-1.5 before:left-1/2 before:h-2.5 before:w-2.5 before:-translate-x-1/2 before:rounded-full before:border before:border-current before:border-b-0 after:absolute after:-bottom-1 after:left-1 after:h-1 after:w-1 after:rounded-full after:bg-current" />
           </Link>
-          <Link className="rounded-2xl border border-walnut/10 bg-background/55 px-4 py-3 text-xs uppercase tracking-[0.14em] text-walnut shadow-sm" href="/login">
+          <Link
+            className={`header-action inline-flex h-12 items-center px-4 text-[0.68rem] uppercase tracking-[0.16em] ${isActive("/login") ? "header-action-active" : ""}`}
+            href="/login"
+          >
             Login
           </Link>
         </div>

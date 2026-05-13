@@ -70,6 +70,7 @@ export const products: Product[] = [
     suggestedUse: "Pet boutiques, lifestyle retailers, gift assortments, and eco-conscious home collections.",
     customizationOptions: "Size grading, felt density, neutral palettes, accent details, and wholesale bundles.",
     customNote: "Wholesale buyers may request exclusive sizes, colors, and product families.",
+    imageSrc: "/gallery/felt-texture.jpg",
   },
   {
     slug: "custom-wholesale-designs",

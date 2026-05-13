@@ -25,9 +25,9 @@ export default async function ProductDetailPage({
         <div className="editorial-frame p-4">
           <AssetImage
             src={product.imageSrc}
-            alt={`${product.name} representative showroom visual`}
+            alt={`${product.name} collection image`}
             className="min-h-[540px]"
-            label="Representative Product Study"
+            label="Product Study"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

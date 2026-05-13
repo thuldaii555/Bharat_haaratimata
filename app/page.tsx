@@ -2,7 +2,6 @@ import Link from "next/link";
 import { products } from "@/lib/products";
 import { AssetImage } from "./components/AssetImage";
 import { SectionHeader } from "./components/SectionHeader";
-import { UnwindingWoolBall } from "./components/motion/UnwindingWoolBall";
 
 const trustStats = [
   ["Est. 1999", "Nepalese felt craft company"],
@@ -20,6 +19,14 @@ const benefits = [
   "Long-term buyer partnership",
 ];
 
+const heroFacts = ["Est. 1999", "300+ Women Artisans", "100% New Zealand Wool"];
+
+const atelierNotes = [
+  ["Material Integrity", "Dense wool felt, hand-finished texture, and natural tactility for long-use interiors."],
+  ["Interior Positioning", "Rugs, decor, and custom objects planned for boutiques, hospitality, and design studios."],
+  ["Export Partnership", "Sampling, color development, bulk planning, and repeatable wholesale programs from Nepal."],
+];
+
 export default function Home() {
   return (
     <>
@@ -29,28 +36,34 @@ export default function Home() {
             src="/backgrounds/hero-wool-craft.jpg"
             alt=""
             priority
-            className="h-full rounded-none opacity-28 blur-[2px]"
-            imageClassName="scale-105"
+            className="h-full rounded-none opacity-[0.46] blur-[1px]"
+            imageClassName="scale-105 saturate-[0.88] contrast-[0.9]"
             sizes="100vw"
           />
         </div>
-        <div className="absolute left-[-10rem] top-12 h-[34rem] w-[34rem] rounded-full bg-felt/34 blur-3xl" />
-        <div className="absolute right-[-8rem] top-28 h-[28rem] w-[28rem] rounded-full bg-gold/16 blur-3xl" />
-        <div className="absolute bottom-[-12rem] left-[35%] h-[30rem] w-[30rem] rounded-full bg-clay/12 blur-3xl" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,243,234,0.84),rgba(247,243,234,0.74)_47%,rgba(58,42,32,0.18)),radial-gradient(circle_at_80%_26%,rgba(184,145,75,0.2),transparent_28rem)]" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#f7f3ea] to-transparent" />
 
-        <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-[0.88fr_1.12fr] md:px-10 lg:px-12">
+        <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:px-10 lg:px-12">
           <div className="relative z-10 max-w-2xl">
-            <div className="mb-7 inline-flex rounded-2xl border border-gold/30 bg-ivory/64 px-4 py-3 text-xs uppercase tracking-[0.18em] text-walnut shadow-sm backdrop-blur">
+            <div className="premium-kicker mb-7">
               Handmade Nepal Felt Wool Since 1999
             </div>
             <h1 className="font-serif text-6xl leading-[0.9] text-walnut md:text-8xl">
               Deluxe handmade felt collections for global interiors.
             </h1>
-            <p className="mt-8 max-w-xl text-xl leading-9 text-olive">
+            <p className="mt-8 max-w-xl text-xl font-semibold leading-9 text-walnut">
               Haaratimata Handicrafts is a Nepal-based felt wool products
               supplier, manufacturer, and exporter creating refined wholesale
               collections from 100% New Zealand wool.
             </p>
+            <div className="mt-8 grid max-w-xl grid-cols-3 overflow-hidden rounded-[1.1rem] border border-walnut/12 bg-ivory/72 shadow-[0_18px_44px_rgba(58,42,32,0.09)] backdrop-blur">
+              {heroFacts.map((fact) => (
+                <p className="border-r border-walnut/10 px-4 py-3 text-center text-[0.68rem] uppercase tracking-[0.14em] text-walnut last:border-r-0" key={fact}>
+                  {fact}
+                </p>
+              ))}
+            </div>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link className="button-dark min-w-48" href="/showroom">
                 View Showroom
@@ -61,40 +74,24 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 min-h-[660px]">
-            <div className="editorial-frame absolute right-0 top-0 w-[88%] p-4">
-              <div className="image-well hero-image-well flex min-h-[560px] items-end p-8">
+          <div className="relative z-10 min-h-[640px]">
+            <div className="editorial-frame absolute right-0 top-0 w-full p-4">
+              <div className="relative min-h-[585px] overflow-hidden rounded-[1.25rem]">
                 <AssetImage
-                  src="/backgrounds/hero-wool-craft.jpg"
-                  alt="Representative wool craft texture used as temporary showroom imagery"
-                  className="absolute inset-0 rounded-[1.45rem]"
-                  imageClassName="opacity-80"
+                  src="/showroom/felt-rugs.jpg"
+                  alt="Premium interior rug display for handmade felt wool collections"
+                  className="absolute inset-0 rounded-none shadow-none"
+                  imageClassName="saturate-[1.02] contrast-[1.04]"
                   sizes="(max-width: 768px) 100vw, 55vw"
                 />
-                <div className="absolute left-8 top-8 z-10 h-40 w-32 rounded-[1.35rem] border border-ivory/50 bg-[linear-gradient(145deg,rgba(255,252,245,0.72),rgba(217,213,204,0.42))] shadow-[0_22px_54px_rgba(58,42,32,0.14)]" />
-                <div className="absolute right-10 top-14 z-10 h-48 w-40 rounded-[1.4rem] border border-ivory/40 bg-[radial-gradient(circle_at_35%_30%,rgba(255,252,245,0.7),transparent_6rem),linear-gradient(145deg,rgba(200,184,157,0.76),rgba(169,130,99,0.5))] shadow-[0_24px_58px_rgba(58,42,32,0.16)]" />
-                <div className="absolute bottom-28 left-24 z-10 h-24 w-56 rounded-full border border-ivory/50 bg-[linear-gradient(90deg,rgba(217,213,204,0.62),rgba(255,252,245,0.72),rgba(200,184,157,0.58))] shadow-[0_18px_42px_rgba(58,42,32,0.12)]" />
-                <div className="relative z-20 max-w-xs rounded-[1.5rem] border border-ivory/60 bg-ivory/78 p-6 shadow-[0_26px_60px_rgba(58,42,32,0.18)] backdrop-blur">
-                  <p className="eyebrow text-gold">Temporary Showroom Visuals</p>
-                  <p className="mt-3 text-sm leading-6 text-walnut/76">
-                    Representative wool imagery and layered material studies
-                    set the tone until official catalog photography is added.
+                <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(58,42,32,0.02),rgba(58,42,32,0.34)),linear-gradient(90deg,rgba(255,252,245,0.08),transparent_45%)]" />
+                <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ivory/24 bg-walnut/56 p-6 text-ivory backdrop-blur-md md:p-8">
+                  <p className="small-caps text-gold">Premium interior collections</p>
+                  <p className="mt-3 max-w-xl font-serif text-3xl leading-tight">
+                    Rugs, felt textures, and decor objects composed for calm global spaces.
                   </p>
                 </div>
               </div>
-            </div>
-            <div className="image-well felt-swatch-well absolute left-0 top-24 hidden h-56 w-52 rounded-[1.6rem] border border-ivory/60 p-4 shadow-[0_28px_70px_rgba(58,42,32,0.18)] md:block">
-              <p className="relative z-10 rounded-full bg-ivory/78 px-4 py-2 text-xs uppercase tracking-[0.16em] text-walnut">
-                Felt Texture Study
-              </p>
-            </div>
-            <UnwindingWoolBall />
-            <div className="absolute bottom-10 left-8 w-72 rounded-[1.6rem] border border-walnut/10 bg-ivory/84 p-6 shadow-[0_28px_70px_rgba(58,42,32,0.16)] backdrop-blur">
-              <p className="font-serif text-4xl text-walnut">B2B</p>
-              <p className="mt-2 text-sm leading-6 text-olive">
-                Custom palettes, sampling, bulk-buy planning, and repeatable
-                wholesale programs for international buyers.
-              </p>
             </div>
           </div>
         </div>
@@ -115,30 +112,32 @@ export default function Home() {
         <SectionHeader
           eyebrow="Product Collections"
           title="Image-led product families for wholesale buyers."
-          copy="Representative visuals guide the showroom while official Haaratimata catalog photography is prepared. Each category supports custom design, bulk-buy planning, and export conversations."
+          copy="Each category is presented with a clear material story, premium image treatment, and practical wholesale direction for buyers planning assortments."
         />
         <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
           {products.map((product, index) => (
-            <article className="showroom-panel group p-4" key={product.slug}>
-              <AssetImage
-                src={product.imageSrc}
-                alt={`${product.name} representative showroom visual`}
-                className="mb-8 h-80"
-                label={`Collection 0${index + 1}`}
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="px-2 pb-3">
-                <p className="small-caps text-gold">{product.category}</p>
-                <h3 className="mt-3 font-serif text-4xl leading-tight text-walnut">
-                  {product.name}
-                </h3>
-                <p className="mt-4 leading-7 text-olive">{product.summary}</p>
-                <Link
-                  className="mt-7 inline-flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-walnut"
-                  href={`/showroom/${product.slug}`}
-                >
+            <article className="image-led-card group" key={product.slug}>
+              <div className="relative">
+                <AssetImage
+                  src={product.imageSrc}
+                  alt={`${product.name} collection image`}
+                  className="h-[24rem] rounded-none shadow-none"
+                  imageClassName="saturate-[0.94]"
+                  label={`Collection 0${index + 1}`}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(58,42,32,0.58))]" />
+                <div className="absolute bottom-6 left-6 right-6 z-10 text-ivory">
+                  <p className="small-caps text-gold">{product.category}</p>
+                  <h3 className="mt-3 font-serif text-4xl leading-tight">
+                    {product.name}
+                  </h3>
+                </div>
+              </div>
+              <div className="p-6">
+                <p className="leading-7 text-olive">{product.summary}</p>
+                <Link className="catalog-cta mt-7" href={`/showroom/${product.slug}`}>
                   Explore collection
-                  <span className="h-px w-10 bg-gold transition-all group-hover:w-16" />
                 </Link>
               </div>
             </article>
@@ -151,8 +150,8 @@ export default function Home() {
           <div className="relative">
             <div className="editorial-frame p-4">
               <AssetImage
-                src="/artisans/women-artisans.jpg"
-                alt="Representative image of women artisans used as temporary showroom imagery"
+                src="/gallery/rug-texture.jpg"
+                alt="Close wool rug texture and hand-finished surface"
                 className="min-h-[520px]"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
@@ -178,6 +177,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="grid gap-6 md:grid-cols-3">
+          {atelierNotes.map(([title, copy], index) => (
+            <div className="image-led-card group" key={title}>
+              <AssetImage
+                src={index === 0 ? "/gallery/felt-texture.jpg" : index === 1 ? "/showroom/home-decor.jpg" : "/showroom/custom-designs.jpg"}
+                alt={`${title} visual`}
+                className="h-72 rounded-none shadow-none"
+                imageClassName="saturate-[0.98] contrast-[1.03]"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="p-6">
+                <p className="small-caps text-gold">{title}</p>
+                <p className="mt-4 text-lg leading-8 text-olive">{copy}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-center">
         <div>
           <p className="eyebrow mb-4 text-gold">Material & Sustainability</p>
@@ -194,7 +213,7 @@ export default function Home() {
         <div className="editorial-frame p-4">
           <AssetImage
             src="/gallery/felt-texture.jpg"
-            alt="Representative felt texture used as temporary showroom imagery"
+            alt="Natural felt texture detail"
             className="min-h-[440px]"
             label="Wool Felt Texture"
             sizes="(max-width: 768px) 100vw, 50vw"

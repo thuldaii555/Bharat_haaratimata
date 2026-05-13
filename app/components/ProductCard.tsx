@@ -5,27 +5,32 @@ import { AssetImage } from "./AssetImage";
 export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
-      className="showroom-panel group block p-4 transition-transform hover:-translate-y-1"
+      className="image-led-card group block transition-transform hover:-translate-y-1"
       href={`/showroom/${product.slug}`}
     >
-      <AssetImage
-        src={product.imageSrc}
-        alt={`${product.name} representative showroom visual`}
-        className="mb-7 h-72"
-        label="Representative Visual"
-        sizes="(max-width: 768px) 100vw, 33vw"
-      />
-      <p className="text-xs uppercase tracking-[0.18em] text-gold">
-        {product.category}
-      </p>
-      <h3 className="mt-3 font-serif text-3xl leading-tight text-walnut">
-        {product.name}
-      </h3>
-      <p className="mt-4 leading-7 text-olive">{product.summary}</p>
-      <span className="mt-6 inline-flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-walnut">
-        Explore collection
-        <span className="h-px w-10 bg-gold transition-all group-hover:w-14" />
-      </span>
+      <div className="relative">
+        <AssetImage
+          src={product.imageSrc}
+          alt={`${product.name} collection image`}
+          className="h-80 rounded-none shadow-none"
+          imageClassName="saturate-[0.94]"
+          label="Collection"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_32%,rgba(58,42,32,0.62))]" />
+        <div className="absolute bottom-6 left-6 right-6 z-10">
+          <p className="text-xs uppercase tracking-[0.18em] text-gold">
+            {product.category}
+          </p>
+          <h3 className="mt-3 font-serif text-3xl leading-tight text-ivory">
+            {product.name}
+          </h3>
+        </div>
+      </div>
+      <div className="p-6">
+        <p className="leading-7 text-olive">{product.summary}</p>
+        <span className="catalog-cta mt-6">Explore collection</span>
+      </div>
     </Link>
   );
 }
