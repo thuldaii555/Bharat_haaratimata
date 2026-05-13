@@ -1,186 +1,152 @@
+import Link from "next/link";
+import { SectionHeader } from "./components/SectionHeader";
+import { WoolScrollGuide } from "./components/WoolScrollGuide";
+
+const trustItems = [
+  ["1999", "Nepalese felt craft"],
+  ["300+", "Women artisans"],
+  ["100%", "Handmade wool felt"],
+  ["Global", "Wholesale export focus"],
+];
+
+const collections = [
+  {
+    title: "Rugs & Carpets",
+    copy: "Dense felt surfaces, quiet palettes, and custom formats for hotels, homes, and design studios.",
+  },
+  {
+    title: "Home Decor",
+    copy: "Baskets, garlands, tabletop accents, and soft sculptural pieces shaped for considered interiors.",
+  },
+  {
+    title: "Toys & Accessories",
+    copy: "Tactile wool objects designed for boutiques, museum shops, and refined retail assortments.",
+  },
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#fffaf2] text-[#2d1b0f]">
-      {/* Header */}
-      <header className="border-b border-orange-100 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div>
-            <h1 className="text-xl font-bold tracking-wide text-orange-900">
-              Haarati Mata
+    <>
+      <section className="relative overflow-hidden">
+        <WoolScrollGuide />
+        <div className="absolute left-[-8rem] top-20 h-80 w-80 rounded-full bg-felt/30 blur-3xl" />
+        <div className="absolute bottom-10 right-[-10rem] h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
+        <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-[0.92fr_1.08fr] md:px-10 lg:px-12">
+          <div className="relative z-10 max-w-xl">
+            <p className="eyebrow mb-5">Nepalese Felt Handicrafts Since 1999</p>
+            <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
+              Premium felt craft for global interiors.
             </h1>
-            <p className="text-sm text-orange-700">
-              A sacred space for devotion, peace, and community
+            <p className="mt-8 text-lg leading-8 text-olive">
+              Handmade wool felt collections from Nepal for wholesale buyers,
+              interior designers, boutiques, and conscious export partners.
             </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link className="button-dark" href="/showroom">
+                View Showroom
+              </Link>
+              <Link className="button-light" href="/wholesale">
+                Wholesale Inquiry
+              </Link>
+            </div>
           </div>
-
-          <nav className="hidden gap-6 text-sm font-medium text-orange-900 md:flex">
-            <a href="#about" className="hover:text-orange-600">About</a>
-            <a href="#devotion" className="hover:text-orange-600">Devotion</a>
-            <a href="#visit" className="hover:text-orange-600">Visit</a>
-            <a href="#contact" className="hover:text-orange-600">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      {/* Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-2">
-        <div>
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-orange-600">
-            Jai Mata Di
-          </p>
-
-          <h2 className="mb-6 text-4xl font-bold leading-tight text-orange-950 md:text-6xl">
-            Welcome to the sacred home of Haarati Mata
-          </h2>
-
-          <p className="mb-8 text-lg leading-8 text-stone-700">
-            A peaceful digital space dedicated to faith, prayer, tradition, and
-            the blessings of the Divine Mother.
-          </p>
-
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <a
-              href="#about"
-              className="rounded-full bg-orange-700 px-6 py-3 text-center font-semibold text-white shadow-sm hover:bg-orange-800"
-            >
-              Learn More
-            </a>
-
-            <a
-              href="#visit"
-              className="rounded-full border border-orange-700 px-6 py-3 text-center font-semibold text-orange-800 hover:bg-orange-50"
-            >
-              Plan a Visit
-            </a>
-          </div>
-        </div>
-
-        <div className="rounded-3xl border border-orange-100 bg-white p-6 shadow-lg">
-          <div className="flex min-h-[360px] items-center justify-center rounded-2xl bg-gradient-to-br from-orange-100 via-amber-50 to-yellow-100">
-            <div className="text-center">
-              <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-full bg-orange-700 text-5xl text-white shadow-md">
-                ॐ
+          <div className="editorial-frame relative z-10 p-4">
+            <div className="image-well flex min-h-[520px] items-end p-8">
+              <div className="relative z-10 max-w-sm rounded-3xl border border-ivory/50 bg-ivory/72 p-6 shadow-[0_24px_50px_rgba(58,42,32,0.16)] backdrop-blur">
+                <p className="eyebrow text-gold">Showroom Study</p>
+                <p className="mt-3 text-sm leading-6 text-walnut/76">
+                  Warm wool textures, export-ready collections, and artisan
+                  detail presented with a refined global point of view.
+                </p>
               </div>
-              <p className="text-lg font-semibold text-orange-950">
-                Devotion • Service • Peace
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="luxury-band border-y border-walnut/10">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-7 md:grid-cols-4 md:px-10 lg:px-12">
+          {trustItems.map(([number, label]) => (
+            <div
+              className="rounded-2xl border border-walnut/10 bg-ivory/58 px-4 py-5 text-center shadow-sm"
+              key={label}
+            >
+              <p className="font-serif text-3xl text-walnut">{number}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.16em] text-olive">
+                {label}
               </p>
-              <p className="mt-2 text-sm text-stone-600">
-                Image or Mata icon can be added here later
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <SectionHeader
+          eyebrow="Collections"
+          title="Quiet forms, tactile luxury, export-ready craft."
+          copy="A focused product language for premium spaces and retail assortments, with room for custom color, scale, and seasonal development."
+        />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {collections.map((collection) => (
+            <article className="panel group p-4" key={collection.title}>
+              <div className="image-well mb-8 flex h-72 items-end p-5">
+                <p className="relative z-10 rounded-full bg-ivory/75 px-4 py-2 text-xs uppercase tracking-[0.18em] text-walnut">
+                  {collection.title}
+                </p>
+              </div>
+              <div className="px-2 pb-2">
+                <h3 className="font-serif text-3xl text-walnut">{collection.title}</h3>
+                <p className="mt-4 leading-7 text-olive">{collection.copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="luxury-band border-y border-walnut/10">
+        <div className="section grid gap-12 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+          <div className="editorial-frame p-4">
+            <div className="image-well min-h-[430px]" />
+          </div>
+          <div>
+            <p className="eyebrow mb-4">Human Story</p>
+            <h2 className="font-serif text-4xl leading-tight text-walnut md:text-5xl">
+              Felt shaped by skilled hands, patient time, and community.
+            </h2>
+            <div className="mt-7 space-y-5 text-lg leading-8 text-olive">
+              <p>
+                Haaratimata works with rural women artisans whose felt-making
+                skill brings income, dignity, and continuity to local craft
+                communities.
+              </p>
+              <p>
+                The result is not anonymous decoration. It is wool, water,
+                touch, and careful finishing made for international buyers who
+                value origin as much as polish.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="bg-white py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-600">
-            About
-          </p>
-
-          <h3 className="mb-6 text-3xl font-bold text-orange-950">
-            A place rooted in faith and devotion
-          </h3>
-
-          <p className="text-lg leading-8 text-stone-700">
-            Haarati Mata represents divine strength, compassion, protection,
-            and spiritual guidance. This website is being created as a simple
-            and respectful place where devotees can learn, connect, and stay
-            updated with important information.
-          </p>
-        </div>
-      </section>
-
-      {/* Devotion */}
-      <section id="devotion" className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-600">
-            Devotion
-          </p>
-
-          <h3 className="mb-10 text-3xl font-bold text-orange-950">
-            What this website will include
-          </h3>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h4 className="mb-3 text-xl font-bold text-orange-900">
-                Daily Prayers
-              </h4>
-              <p className="leading-7 text-stone-700">
-                Aarti, mantras, devotional text, and spiritual content for
-                devotees.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h4 className="mb-3 text-xl font-bold text-orange-900">
-                Events & Updates
-              </h4>
-              <p className="leading-7 text-stone-700">
-                Important dates, puja schedules, announcements, and community
-                updates.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h4 className="mb-3 text-xl font-bold text-orange-900">
-                Community
-              </h4>
-              <p className="leading-7 text-stone-700">
-                A space to keep devotees connected through service, faith, and
-                shared tradition.
-              </p>
-            </div>
+      <section className="section">
+        <div className="overflow-hidden rounded-[2rem] bg-walnut px-6 py-14 text-ivory shadow-[0_30px_90px_rgba(58,42,32,0.2)] md:px-12">
+          <div className="mb-10 h-px bg-gradient-to-r from-gold via-ivory/20 to-transparent" />
+          <p className="eyebrow mb-5 text-gold">Wholesale & Export</p>
+          <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
+            <h2 className="max-w-3xl font-serif text-4xl leading-tight md:text-6xl">
+              Build a considered felt collection with a Nepal-based export
+              partner.
+            </h2>
+            <Link
+              className="inline-flex h-12 items-center justify-center rounded-full border border-gold/70 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-gold hover:text-walnut"
+              href="/contact"
+            >
+              Request Wholesale Quote
+            </Link>
           </div>
         </div>
       </section>
-
-      {/* Visit */}
-      <section id="visit" className="bg-orange-900 py-20 text-white">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-200">
-            Visit
-          </p>
-
-          <h3 className="mb-6 text-3xl font-bold">
-            Temple information will be added here
-          </h3>
-
-          <p className="text-lg leading-8 text-orange-50">
-            Address, opening hours, directions, and visitor information can be
-            added in this section once finalized.
-          </p>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-orange-600">
-            Contact
-          </p>
-
-          <h3 className="mb-6 text-3xl font-bold text-orange-950">
-            Stay connected
-          </h3>
-
-          <div className="rounded-2xl bg-white p-6 shadow-sm">
-            <p className="leading-8 text-stone-700">
-              Contact details, email, phone number, donation information, and
-              social media links can be added here.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-orange-100 bg-white py-6">
-        <div className="mx-auto max-w-6xl px-6 text-center text-sm text-stone-600">
-          © {new Date().getFullYear()} Haarati Mata. All rights reserved.
-        </div>
-      </footer>
-    </main>
+    </>
   );
 }

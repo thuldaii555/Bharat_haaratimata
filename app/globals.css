@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f3ea;
+  --ivory: #fffcf5;
+  --ash: #d9d5cc;
+  --felt: #c8b89d;
+  --clay: #a98263;
+  --walnut: #3a2a20;
+  --olive: #77725f;
+  --gold: #b8914b;
+  --cream: #f7f3ea;
+  --soft: #fffcf5;
+  --warm: #3a2a20;
+  --stone: #77725f;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-soft: var(--soft);
+  --color-ash: var(--ash);
+  --color-felt: var(--felt);
+  --color-clay: var(--clay);
+  --color-walnut: var(--walnut);
+  --color-olive: var(--olive);
+  --color-gold: var(--gold);
+  --color-warm: var(--warm);
+  --color-stone: var(--stone);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(200, 184, 157, 0.34), transparent 28rem),
+    radial-gradient(circle at 88% 4%, rgba(184, 145, 75, 0.18), transparent 24rem),
+    linear-gradient(180deg, var(--background), #efe7d9 62%, var(--background));
+  color: var(--warm);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section {
+  margin-inline: auto;
+  max-width: 80rem;
+  padding: 5.5rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: 3rem;
+  }
+}
+
+.eyebrow {
+  color: var(--olive);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.panel {
+  border: 1px solid rgba(58, 42, 32, 0.12);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 245, 0.88), rgba(247, 243, 234, 0.72)),
+    radial-gradient(circle at 18% 0%, rgba(184, 145, 75, 0.14), transparent 18rem);
+  box-shadow: 0 24px 70px rgba(58, 42, 32, 0.09);
+  padding: 1.5rem;
+}
+
+.editorial-frame {
+  overflow: hidden;
+  border: 1px solid rgba(58, 42, 32, 0.13);
+  border-radius: 2rem;
+  background: rgba(255, 252, 245, 0.52);
+  box-shadow: 0 28px 80px rgba(58, 42, 32, 0.12);
+}
+
+.image-well {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.45rem;
+  background:
+    radial-gradient(circle at 22% 22%, rgba(255, 252, 245, 0.72), transparent 9rem),
+    radial-gradient(circle at 78% 28%, rgba(184, 145, 75, 0.28), transparent 12rem),
+    radial-gradient(circle at 58% 78%, rgba(119, 114, 95, 0.22), transparent 13rem),
+    linear-gradient(135deg, #d9d5cc, #c8b89d 48%, #a98263);
+}
+
+.image-well::before,
+.image-well::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 252, 245, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 252, 245, 0.1);
+}
+
+.image-well::before {
+  right: 12%;
+  top: 14%;
+  height: 8rem;
+  width: 8rem;
+}
+
+.image-well::after {
+  bottom: 10%;
+  left: 10%;
+  height: 12rem;
+  width: 12rem;
+}
+
+.button-dark,
+.button-light {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(58, 42, 32, 0.18);
+  border-radius: 999px;
+  padding-inline: 1.4rem;
+  box-shadow: 0 14px 28px rgba(58, 42, 32, 0.1);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.button-dark:hover,
+.button-light:hover {
+  transform: translateY(-1px);
+}
+
+.button-dark {
+  background: var(--walnut);
+  color: var(--ivory);
+}
+
+.button-dark:hover {
+  background: #4a382b;
+  color: var(--ivory);
+}
+
+.button-light {
+  background: rgba(255, 252, 245, 0.62);
+  color: var(--walnut);
+}
+
+.button-light:hover {
+  border-color: rgba(184, 145, 75, 0.6);
+  background: rgba(255, 252, 245, 0.92);
+  color: var(--walnut);
+}
+
+.luxury-band {
+  background:
+    radial-gradient(circle at 12% 25%, rgba(184, 145, 75, 0.16), transparent 20rem),
+    radial-gradient(circle at 88% 75%, rgba(200, 184, 157, 0.22), transparent 22rem),
+    rgba(255, 252, 245, 0.58);
 }
