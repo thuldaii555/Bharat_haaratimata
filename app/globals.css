@@ -167,6 +167,25 @@ a {
     linear-gradient(135deg, #ede4d3 0%, #d9d5cc 34%, #c8b89d 62%, #a98263 100%);
 }
 
+@keyframes heroBackgroundDrift {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.09) translate3d(-1.5%, -1%, 0);
+  }
+
+  100% {
+    transform: scale(1.06) translate3d(1.25%, 1%, 0);
+  }
+}
+
+.hero-background-drift {
+  animation: heroBackgroundDrift 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 @keyframes heroEditorialDrift {
   0% {
     transform: scale(1.04) translate3d(0, 0, 0);
@@ -198,6 +217,11 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-background-drift {
+    animation: none;
+    transform: none;
+  }
+
   .hero-editorial-drift {
     animation: none;
     transform: none;

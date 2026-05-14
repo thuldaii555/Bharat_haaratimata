@@ -40,7 +40,7 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="object-cover opacity-[0.7] saturate-[0.98] contrast-[1.02]"
+            className="hero-background-drift object-cover opacity-[0.7] saturate-[0.98] contrast-[1.02]"
           />
         </div>
         <div className="absolute inset-0 bg-[#fff8ea]/30" />
