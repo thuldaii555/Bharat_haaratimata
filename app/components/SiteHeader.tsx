@@ -5,13 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Who We Are", href: "/about" },
   { label: "Showroom", href: "/showroom" },
-  { label: "Wholesale", href: "/wholesale" },
+  { label: "Trade", href: "/wholesale" },
   { label: "Sustainability", href: "/sustainability" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
+  { label: "Lookbook", href: "/gallery" },
 ];
 
 export default function SiteHeader() {
