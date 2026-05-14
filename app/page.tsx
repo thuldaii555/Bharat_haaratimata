@@ -35,7 +35,7 @@ export default function Home() {
       <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/backgrounds/hero-yarn-pastel.jpg"
+            src={premiumImages.hero.background}
             alt=""
             fill
             priority
@@ -80,7 +80,7 @@ export default function Home() {
             <div className="editorial-frame w-full p-3 sm:p-4">
               <div className="relative min-h-[460px] overflow-hidden rounded-[1.25rem] md:min-h-[520px] lg:min-h-[560px]">
                 <Image
-                  src="/hero/hero-basket-yarn.jpg"
+                  src={premiumImages.hero.feature}
                   alt="Basket filled with colorful wool yarn for handmade felt collections"
                   fill
                   priority
