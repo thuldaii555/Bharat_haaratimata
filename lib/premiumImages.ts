@@ -1,31 +1,67 @@
 export const premiumImages = {
-  basketYarn: "/premium-photos/a-basket-with-yarn-and-knitting-needles-free-photo.jpeg",
-  whiteWoolFlowers: "/premium-photos/ball-of-white-wool-yarn-with-flowers-on-soft-fabric-background-photo.jpeg",
-  carpetClose: "/premium-photos/carpet-26952500.webp",
-  pastelYarn: "/premium-photos/colorful-yarn-balls-in-soft-pastel-shades-for-crafting-fun-photo.jpg",
-  sweaterStackLantern: "/premium-photos/cozy-sweaters-stack-knitted-lantern-table-34927393.webp",
-  dolls: "/premium-photos/dolls-26803662.webp",
-  owlToys: "/premium-photos/handmade-owl-toys-crafted-soft-35324474.webp",
-  blueYarnNeedles: "/premium-photos/light-blue-yarn-ball-with-knitting-needles-and-knitted-fabric-free-photo.jpg",
-  carpetStore: "/premium-photos/persian-carpets-display-carpet-store-51372228.webp",
-  textileVariety:
-    "/premium-photos/silk-scarf-cashmere-scarf-wool-felt-tapestry-carpet-various-colors-wooden-fram-as-new-year-approaches-there-variety-166091905.webp",
-  loomWarm: "/premium-photos/weaving-loom-thread-yarn-closeup-image-old-57788065.webp",
-  loomNeutral: "/premium-photos/weaving-loom-thread-yarn-closeup-image-old-75414379.webp",
-  loomTexture: "/premium-photos/weaving-loom-thread-yarn-closeup-image-old-75414445.webp",
-  whiteCarpet: "/premium-photos/white-carpet-texture-534036.webp",
-  winterHome: "/premium-photos/winter-home-romantic-icon-valentine-card-mug-knits-book-window-sill-cozy-love-word-comfortable-cold-weather-life-stile-136010589.jpg",
-  knittedStack: "/premium-photos/winter-knitted-clothes-stack-wooden-background-woolen-apparel-cozy-sweaters-pile-78936373.jpg",
-  mittenCup: "/premium-photos/woman-hands-white-blue-mittens-holding-cozy-knitted-cup-hot-cocoa-tea-coffee-winter-christmas-time-concept-61487099.jpg",
+  hero: {
+    background: "/images/hero/home-hero-yarn.jpg",
+    feature: "/images/hero/home-feature-basket.jpg",
+  },
+  categories: {
+    rugs: "/images/categories/rugs.jpg",
+    blanketsThrows: "/images/categories/blankets-throws.jpg",
+    wallHangings: "/images/categories/wall-hangings.jpg",
+    homeDecorations: "/images/categories/home-decorations.jpg",
+    toys: "/images/categories/toys.jpg",
+    personalAccessories: "/images/categories/personal-accessories.jpg",
+    petAccessories: null,
+    customDesigns: "/images/categories/custom-designs.jpg",
+  },
+  showroom: {
+    rugDisplay: "/images/showroom/rug-display.jpg",
+    whiteCarpetTexture: "/images/showroom/white-carpet-texture.jpg",
+    feltDolls: "/images/showroom/felt-dolls.jpg",
+    blueYarnKnitting: "/images/showroom/blue-yarn-knitting.jpg",
+  },
+  trade: {
+    weavingLoomDetail: "/images/trade/weaving-loom-detail.jpg",
+    threadYarnDetail: "/images/trade/thread-yarn-detail.jpg",
+  },
+  sustainability: {
+    naturalWool: "/images/sustainability/natural-wool.jpg",
+    woolTexture: "/images/sustainability/wool-texture.jpg",
+  },
+  lookbook: {
+    colorStoryYarn: "/images/lookbook/color-story-yarn.jpg",
+    basketYarnStudy: "/images/lookbook/basket-yarn-study.jpg",
+    cozyHomeTextile: "/images/lookbook/cozy-home-textile.jpg",
+  },
+
+  // Legacy aliases are kept until the UI is migrated to the curated map.
+  basketYarn: "/images/hero/home-feature-basket.jpg",
+  whiteWoolFlowers: "/images/sustainability/natural-wool.jpg",
+  carpetClose: "/images/categories/rugs.jpg",
+  pastelYarn: "/images/hero/home-hero-yarn.jpg",
+  sweaterStackLantern: "/images/categories/blankets-throws.jpg",
+  dolls: "/images/showroom/felt-dolls.jpg",
+  owlToys: "/images/categories/toys.jpg",
+  blueYarnNeedles: "/images/showroom/blue-yarn-knitting.jpg",
+  carpetStore: "/images/showroom/rug-display.jpg",
+  textileVariety: "/images/categories/wall-hangings.jpg",
+  loomWarm: "/images/trade/weaving-loom-detail.jpg",
+  loomNeutral: "/images/trade/thread-yarn-detail.jpg",
+  loomTexture: "/images/categories/custom-designs.jpg",
+  whiteCarpet: "/images/showroom/white-carpet-texture.jpg",
+  winterHome: "/images/lookbook/cozy-home-textile.jpg",
+  knittedStack: "/images/categories/personal-accessories.jpg",
+  mittenCup:
+    "/premium-photos/woman-hands-white-blue-mittens-holding-cozy-knitted-cup-hot-cocoa-tea-coffee-winter-christmas-time-concept-61487099.jpg",
 } as const;
 
-export const productImageBySlug: Record<string, string> = {
-  "felt-rugs-carpets": premiumImages.carpetStore,
-  "felt-ball-rugs": premiumImages.carpetClose,
-  "felt-home-decor": premiumImages.basketYarn,
-  "felt-toys": premiumImages.owlToys,
-  "felt-pet-accessories": premiumImages.whiteCarpet,
-  "custom-wholesale-designs": premiumImages.textileVariety,
+export type PremiumImages = typeof premiumImages;
+
+export const productImageBySlug: Partial<Record<string, string>> = {
+  "felt-rugs-carpets": premiumImages.showroom.rugDisplay,
+  "felt-ball-rugs": premiumImages.categories.rugs,
+  "felt-home-decor": premiumImages.hero.feature,
+  "felt-toys": premiumImages.categories.toys,
+  "custom-wholesale-designs": premiumImages.categories.wallHangings,
 };
 
 export function getPlacedProductImage(slug: string, fallback?: string) {
