@@ -167,22 +167,18 @@ a {
     linear-gradient(135deg, #ede4d3 0%, #d9d5cc 34%, #c8b89d 62%, #a98263 100%);
 }
 
-@keyframes heroBackgroundDrift {
+@keyframes cinematicHeroDrift {
   0% {
-    transform: scale(1.04) translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: scale(1.09) translate3d(-1.5%, -1%, 0);
+    transform: scale(1.16) translate3d(-2.5%, -1.5%, 0);
   }
 
   100% {
-    transform: scale(1.06) translate3d(1.25%, 1%, 0);
+    transform: scale(1.16) translate3d(2.5%, 1.5%, 0);
   }
 }
 
 .hero-background-drift {
-  animation: heroBackgroundDrift 30s ease-in-out infinite alternate;
+  animation: cinematicHeroDrift 22s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -201,8 +197,41 @@ a {
 }
 
 .hero-editorial-drift {
-  animation: heroEditorialDrift 22s ease-in-out infinite alternate;
+  animation: heroEditorialDrift 14s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+@keyframes premiumImageDrift {
+  0% {
+    transform: scale(1.04) translate3d(-0.75%, -0.5%, 0);
+  }
+
+  50% {
+    transform: scale(1.08) translate3d(1%, 0.75%, 0);
+  }
+
+  100% {
+    transform: scale(1.05) translate3d(-0.5%, 1%, 0);
+  }
+}
+
+.premium-image-drift {
+  animation: premiumImageDrift 16s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.premium-image-hover {
+  transition: transform 850ms ease;
+  will-change: transform;
+}
+
+.premium-image-hover:hover {
+  transform: scale(1.05);
+}
+
+.premium-image-still {
+  animation: none;
+  transform: none;
 }
 
 .felt-swatch-well,
@@ -217,14 +246,13 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-background-drift {
-    animation: none;
-    transform: none;
-  }
-
+  .hero-background-drift,
+  .premium-image-drift,
+  .premium-image-hover,
   .hero-editorial-drift {
-    animation: none;
-    transform: none;
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 
