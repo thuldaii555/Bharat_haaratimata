@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "@/lib/products";
+import { getPlacedProductImage } from "@/lib/premiumImages";
 import { AssetImage } from "@/app/components/AssetImage";
 
 export function generateStaticParams() {
@@ -24,7 +25,7 @@ export default async function ProductDetailPage({
       <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-start">
         <div className="editorial-frame p-4">
           <AssetImage
-            src={product.imageSrc}
+            src={getPlacedProductImage(product.slug, product.imageSrc)}
             alt={`${product.name} collection image`}
             className="min-h-[540px]"
             label="Product Study"

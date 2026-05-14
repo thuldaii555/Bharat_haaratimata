@@ -1,5 +1,6 @@
 import { SectionHeader } from "../components/SectionHeader";
 import { AssetImage } from "../components/AssetImage";
+import { premiumImages } from "@/lib/premiumImages";
 
 const points = [
   ["100% New Zealand Wool", "Natural wool gives the felt its dense hand, soft surface, and durable material character for long-use home goods."],
@@ -10,15 +11,15 @@ const points = [
 ];
 
 const materialStory = [
-  ["Wool", "/gallery/felt-texture.jpg", "Dense felt texture with natural warmth and a soft, tactile surface."],
-  ["Biodegradable Felt", "/gallery/rug-texture.jpg", "Natural fiber surfaces support a calmer, longer-use material story than disposable synthetic alternatives."],
-  ["Collection Planning", "/showroom/home-decor.jpg", "Thoughtful product assortments help buyers plan with purpose, restraint, and clearer seasonal intent."],
+  ["Wool", premiumImages.whiteWoolFlowers, "Dense felt texture with natural warmth and a soft, tactile surface."],
+  ["Biodegradable Felt", premiumImages.whiteCarpet, "Natural fiber surfaces support a calmer, longer-use material story than disposable synthetic alternatives."],
+  ["Collection Planning", premiumImages.textileVariety, "Thoughtful product assortments help buyers plan with purpose, restraint, and clearer seasonal intent."],
 ];
 
 const principles = [
-  ["Natural Material", "/gallery/rug-texture.jpg", "Wool felt brings warmth, density, and biodegradability into product categories designed for longer use."],
-  ["Human-Scale Making", "/showroom/custom-designs.jpg", "Handmade production preserves small variations, close finishing, and the evidence of skilled work."],
-  ["Responsible Buying", "/showroom/home-decor.jpg", "Wholesale programs can support better planning, reduced waste, and clearer product intent."],
+  ["Natural Material", premiumImages.loomWarm, "Wool felt brings warmth, density, and biodegradability into product categories designed for longer use."],
+  ["Human-Scale Making", premiumImages.loomTexture, "Handmade production preserves small variations, close finishing, and the evidence of skilled work."],
+  ["Responsible Buying", premiumImages.pastelYarn, "Wholesale programs can support better planning, reduced waste, and clearer product intent."],
 ];
 
 export default function SustainabilityPage() {
@@ -32,7 +33,7 @@ export default function SustainabilityPage() {
       <div className="mt-12 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
         <div className="editorial-frame p-4">
           <AssetImage
-            src="/gallery/felt-texture.jpg"
+            src={premiumImages.whiteWoolFlowers}
             alt="Dense natural wool felt texture"
             className="min-h-[440px]"
             label="Natural Wool Felt"
@@ -105,7 +106,7 @@ export default function SustainabilityPage() {
           </p>
         </div>
         <AssetImage
-          src="/showroom/felt-rugs.jpg"
+          src={premiumImages.carpetClose}
           alt="Premium rug display connected to handmade felt production"
           className="min-h-[320px]"
           label="Lower-Impact Material Story"

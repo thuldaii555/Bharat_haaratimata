@@ -1,6 +1,7 @@
 import { SectionHeader } from "../components/SectionHeader";
 import { AssetImage } from "../components/AssetImage";
 import { InquiryForm } from "../components/InquiryForm";
+import { premiumImages } from "@/lib/premiumImages";
 
 const steps = ["Brief", "Sampling", "Wholesale Quote", "Production", "Export"];
 const buyerNeeds = [
@@ -55,7 +56,7 @@ export default function WholesalePage() {
           </p>
         </div>
         <AssetImage
-          src="/showroom/custom-designs.jpg"
+          src={premiumImages.pastelYarn}
           alt="Custom felt design samples for wholesale planning"
           className="min-h-[360px] rounded-none"
           imageClassName="opacity-[0.86]"
@@ -81,7 +82,7 @@ export default function WholesalePage() {
       <div className="mt-12 grid gap-6 md:grid-cols-[0.95fr_1.05fr] md:items-center">
         <div className="editorial-frame p-4">
           <AssetImage
-            src="/gallery/textile-display.jpg"
+            src={premiumImages.textileVariety}
             alt="Wholesale product assortment and felt sample direction"
             className="min-h-[500px]"
             label="Buyer Program"
@@ -101,7 +102,7 @@ export default function WholesalePage() {
         {trustBlocks.map(([title, copy], index) => (
           <div className="grid gap-5" key={title}>
             <AssetImage
-              src={index === 0 ? "/showroom/home-decor.jpg" : index === 1 ? "/gallery/textile-display.jpg" : "/showroom/felt-rugs.jpg"}
+              src={index === 0 ? premiumImages.loomNeutral : index === 1 ? premiumImages.knittedStack : premiumImages.blueYarnNeedles}
               alt={`${title} visual`}
               className="h-56"
               label={title}
@@ -117,7 +118,7 @@ export default function WholesalePage() {
       <div className="mt-12 grid gap-6 md:grid-cols-[0.9fr_1.1fr]">
         <div className="editorial-frame p-4">
           <AssetImage
-            src="/showroom/custom-designs.jpg"
+            src={premiumImages.basketYarn}
             alt="Custom felt design samples supporting wholesale production"
             className="min-h-[520px]"
             label="Custom Production"

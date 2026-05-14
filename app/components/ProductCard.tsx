@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Product } from "@/lib/products";
+import { getPlacedProductImage } from "@/lib/premiumImages";
 import { AssetImage } from "./AssetImage";
 
 export function ProductCard({ product }: { product: Product }) {
@@ -10,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
     >
       <div className="relative">
         <AssetImage
-          src={product.imageSrc}
+          src={getPlacedProductImage(product.slug, product.imageSrc)}
           alt={`${product.name} collection image`}
           className="h-80 rounded-none shadow-none"
           imageClassName="saturate-[0.94]"

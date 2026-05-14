@@ -1,5 +1,6 @@
 import { SectionHeader } from "../components/SectionHeader";
 import { AssetImage } from "../components/AssetImage";
+import { premiumImages } from "@/lib/premiumImages";
 
 const values = [
   ["Heritage", "Established in 1999 under the Nepal Government."],
@@ -19,7 +20,7 @@ export default function AboutPage() {
         <div className="relative">
           <div className="editorial-frame p-4">
             <AssetImage
-              src="/showroom/home-decor.jpg"
+              src={premiumImages.loomWarm}
               alt="Colorful handmade rug and textile display connected to Nepalese craft"
               className="min-h-[520px]"
               label="Nepal Craft Heritage"

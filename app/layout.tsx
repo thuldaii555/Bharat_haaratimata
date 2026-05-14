@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteFooter } from "./components/SiteFooter";
-import { SiteHeader } from "./components/SiteHeader";
+import SiteHeader from "./components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Haaratimata Handicrafts",

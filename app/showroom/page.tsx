@@ -2,6 +2,7 @@ import { ProductCard } from "../components/ProductCard";
 import { SectionHeader } from "../components/SectionHeader";
 import { AssetImage } from "../components/AssetImage";
 import { products } from "@/lib/products";
+import { premiumImages } from "@/lib/premiumImages";
 
 const catalogNotes = [
   ["Material First", "100% New Zealand wool, felt density, finish, and hand-feel guide every category conversation."],
@@ -10,10 +11,10 @@ const catalogNotes = [
 ];
 
 const showroomStories = [
-  ["Rugs & Carpets", "/showroom/felt-rugs.jpg", "Quiet architectural wool surfaces for residences, hotels, and interior studios."],
-  ["Felt Ball Rugs", "/showroom/felt-ball-rugs.jpg", "Hand-rolled texture, graphic rhythm, and warm color planning for retail programs."],
-  ["Home Decor", "/showroom/home-decor.jpg", "Soft sculptural accents, seasonal objects, and display-friendly homeware collections."],
-  ["Custom Development", "/showroom/custom-designs.jpg", "Buyer-led palettes, forms, samples, and repeatable export assortments."],
+  ["Rugs & Carpets", premiumImages.carpetStore, "Quiet architectural wool surfaces for residences, hotels, and interior studios."],
+  ["Felt Ball Rugs", premiumImages.carpetClose, "Hand-rolled texture, graphic rhythm, and warm color planning for retail programs."],
+  ["Home Decor", premiumImages.basketYarn, "Soft sculptural accents, seasonal objects, and display-friendly homeware collections."],
+  ["Custom Development", premiumImages.blueYarnNeedles, "Buyer-led palettes, forms, samples, and repeatable export assortments."],
 ];
 
 export default function ShowroomPage() {
@@ -26,7 +27,7 @@ export default function ShowroomPage() {
       />
       <div className="showroom-panel mt-10 grid gap-7 p-5 md:grid-cols-[1.12fr_0.88fr] md:p-7">
         <AssetImage
-          src="/gallery/textile-display.jpg"
+          src={premiumImages.textileVariety}
           alt="Curated handmade felt and textile display"
           className="min-h-[460px]"
           label="Catalog Mood"
@@ -104,21 +105,21 @@ export default function ShowroomPage() {
           </div>
           <div className="grid grid-cols-2 gap-0">
             <AssetImage
-              src="/showroom/felt-rugs.jpg"
+              src={premiumImages.carpetStore}
               alt="Premium rug display"
               className="min-h-[260px] rounded-none shadow-none"
               imageClassName="saturate-[1.02]"
               sizes="(max-width: 768px) 50vw, 25vw"
             />
             <AssetImage
-              src="/gallery/felt-texture.jpg"
+              src={premiumImages.loomNeutral}
               alt="Felt material texture"
               className="min-h-[260px] rounded-none shadow-none"
               imageClassName="saturate-[0.98]"
               sizes="(max-width: 768px) 50vw, 25vw"
             />
             <AssetImage
-              src="/showroom/home-decor.jpg"
+              src={premiumImages.textileVariety}
               alt="Decor display and color direction"
               className="col-span-2 min-h-[240px] rounded-none shadow-none"
               imageClassName="saturate-[0.96]"

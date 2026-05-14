@@ -1,17 +1,25 @@
 import { SectionHeader } from "../components/SectionHeader";
 import { AssetImage } from "../components/AssetImage";
+import { premiumImages } from "@/lib/premiumImages";
 
 const frames = [
-  ["Felt ball surface", "/showroom/felt-ball-rugs.jpg"],
-  ["Custom design materials", "/showroom/custom-designs.jpg"],
-  ["Felt texture", "/gallery/felt-texture.jpg"],
-  ["Rug texture", "/gallery/rug-texture.jpg"],
-  ["Textile display", "/gallery/textile-display.jpg"],
-  ["Home decor mood", "/showroom/home-decor.jpg"],
-  ["Custom design palette", "/showroom/custom-designs.jpg"],
-  ["Natural material mood", "/gallery/rug-texture.jpg"],
-  ["Felt rugs", "/showroom/felt-rugs.jpg"],
-  ["Toys and accessories", "/showroom/toys-accessories.jpg"],
+  ["Rug showroom display", premiumImages.carpetStore],
+  ["Felt ball surface", premiumImages.carpetClose],
+  ["White felt texture", premiumImages.whiteCarpet],
+  ["Weaving loom detail", premiumImages.loomWarm],
+  ["Neutral loom threads", premiumImages.loomNeutral],
+  ["Close yarn texture", premiumImages.loomTexture],
+  ["Basket and yarn tools", premiumImages.basketYarn],
+  ["Pastel yarn palette", premiumImages.pastelYarn],
+  ["Blue yarn sample", premiumImages.blueYarnNeedles],
+  ["Natural wool study", premiumImages.whiteWoolFlowers],
+  ["Textile assortment", premiumImages.textileVariety],
+  ["Soft home decor mood", premiumImages.winterHome],
+  ["Knitted stack palette", premiumImages.knittedStack],
+  ["Lantern textile styling", premiumImages.sweaterStackLantern],
+  ["Felt dolls and ornaments", premiumImages.dolls],
+  ["Handmade owl toys", premiumImages.owlToys],
+  ["Warm handmade lifestyle", premiumImages.mittenCup],
 ];
 
 const visualNotes = [
@@ -30,7 +38,7 @@ export default function GalleryPage() {
       />
       <div className="showroom-panel mt-10 grid gap-7 p-5 md:grid-cols-[0.86fr_1.14fr] md:p-7">
         <AssetImage
-          src="/gallery/rug-texture.jpg"
+          src={premiumImages.loomNeutral}
           alt="Layered wool rug texture detail"
           className="min-h-[420px]"
           label="Material Study"
@@ -56,9 +64,9 @@ export default function GalleryPage() {
             alt={`${frame} mood board image`}
             imageClassName="saturate-[0.92] contrast-[1.02]"
             className={`shadow-[0_24px_60px_rgba(58,42,32,0.1)] ${
-              index === 0 || index === 4 || index === 8
+              index === 0 || index === 6 || index === 10
                 ? "md:col-span-2 md:row-span-2"
-                : index === 2 || index === 7
+                : index === 2 || index === 4 || index === 15
                   ? "md:row-span-2"
                   : ""
             }`}

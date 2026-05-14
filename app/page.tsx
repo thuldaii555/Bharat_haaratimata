@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import { products } from "@/lib/products";
+import { getPlacedProductImage, premiumImages } from "@/lib/premiumImages";
 import { AssetImage } from "./components/AssetImage";
 import { SectionHeader } from "./components/SectionHeader";
 
@@ -32,62 +34,63 @@ export default function Home() {
     <>
       <section className="relative min-h-[calc(100vh-80px)] overflow-hidden">
         <div className="absolute inset-0">
-          <AssetImage
-            src="/backgrounds/hero-wool-craft.jpg"
+          <Image
+            src="/backgrounds/hero-yarn-pastel.jpg"
             alt=""
+            fill
             priority
-            className="h-full rounded-none opacity-[0.46] blur-[1px]"
-            imageClassName="scale-105 saturate-[0.88] contrast-[0.9]"
             sizes="100vw"
+            className="object-cover opacity-[0.7] saturate-[0.98] contrast-[1.02]"
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,243,234,0.84),rgba(247,243,234,0.74)_47%,rgba(58,42,32,0.18)),radial-gradient(circle_at_80%_26%,rgba(184,145,75,0.2),transparent_28rem)]" />
+        <div className="absolute inset-0 bg-[#fff8ea]/30" />
         <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#f7f3ea] to-transparent" />
 
-        <div className="mx-auto grid min-h-[calc(100vh-80px)] max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-[0.9fr_1.1fr] md:px-10 lg:px-12">
-          <div className="relative z-10 max-w-2xl">
+        <div className="relative z-10 mx-auto grid min-h-[calc(100vh-80px)] w-full max-w-[1440px] items-center gap-10 px-6 py-14 sm:px-8 md:py-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(460px,1.05fr)] lg:gap-12 lg:px-10 xl:px-12 2xl:px-8">
+          <div className="w-full">
             <div className="premium-kicker mb-7">
               Handmade Nepal Felt Wool Since 1999
             </div>
-            <h1 className="font-serif text-6xl leading-[0.9] text-walnut md:text-8xl">
+            <h1 className="max-w-[780px] font-serif text-[clamp(52px,6vw,96px)] leading-[0.92] text-walnut">
               Deluxe handmade felt collections for global interiors.
             </h1>
-            <p className="mt-8 max-w-xl text-xl font-semibold leading-9 text-walnut">
+            <p className="mt-8 max-w-[700px] text-lg font-semibold leading-8 text-walnut sm:text-xl sm:leading-9">
               Haaratimata Handicrafts is a Nepal-based felt wool products
               supplier, manufacturer, and exporter creating refined wholesale
               collections from 100% New Zealand wool.
             </p>
-            <div className="mt-8 grid max-w-xl grid-cols-3 overflow-hidden rounded-[1.1rem] border border-walnut/12 bg-ivory/72 shadow-[0_18px_44px_rgba(58,42,32,0.09)] backdrop-blur">
+            <div className="mt-8 grid w-full max-w-[700px] grid-cols-1 overflow-hidden rounded-[1.1rem] border border-walnut/12 bg-ivory/72 shadow-[0_18px_44px_rgba(58,42,32,0.09)] backdrop-blur sm:grid-cols-3">
               {heroFacts.map((fact) => (
-                <p className="border-r border-walnut/10 px-4 py-3 text-center text-[0.68rem] uppercase tracking-[0.14em] text-walnut last:border-r-0" key={fact}>
+                <p className="border-b border-walnut/10 px-4 py-3 text-center text-[0.68rem] uppercase tracking-[0.14em] text-walnut last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0" key={fact}>
                   {fact}
                 </p>
               ))}
             </div>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link className="button-dark min-w-48" href="/showroom">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link className="button-dark min-w-48 text-center" href="/showroom">
                 View Showroom
               </Link>
-              <Link className="button-light min-w-48" href="/contact">
+              <Link className="button-light min-w-48 text-center" href="/contact">
                 Request Wholesale Quote
               </Link>
             </div>
           </div>
 
-          <div className="relative z-10 min-h-[640px]">
-            <div className="editorial-frame absolute right-0 top-0 w-full p-4">
-              <div className="relative min-h-[585px] overflow-hidden rounded-[1.25rem]">
-                <AssetImage
-                  src="/showroom/felt-rugs.jpg"
-                  alt="Premium interior rug display for handmade felt wool collections"
-                  className="absolute inset-0 rounded-none shadow-none"
-                  imageClassName="saturate-[1.02] contrast-[1.04]"
+          <div className="w-full">
+            <div className="editorial-frame w-full p-3 sm:p-4">
+              <div className="relative min-h-[460px] overflow-hidden rounded-[1.25rem] md:min-h-[520px] lg:min-h-[560px]">
+                <Image
+                  src="/hero/hero-basket-yarn.jpg"
+                  alt="Basket filled with colorful wool yarn for handmade felt collections"
+                  fill
+                  priority
                   sizes="(max-width: 768px) 100vw, 55vw"
+                  className="object-cover object-center saturate-[1.02] contrast-[1.04]"
                 />
-                <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(58,42,32,0.02),rgba(58,42,32,0.34)),linear-gradient(90deg,rgba(255,252,245,0.08),transparent_45%)]" />
-                <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ivory/24 bg-walnut/56 p-6 text-ivory backdrop-blur-md md:p-8">
+                <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(58,42,32,0.01),rgba(58,42,32,0.18)),linear-gradient(90deg,rgba(255,252,245,0.06),transparent_44%)]" />
+                <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ivory/20 bg-walnut/42 px-5 py-4 text-ivory backdrop-blur-md md:px-6 md:py-5">
                   <p className="small-caps text-gold">Premium interior collections</p>
-                  <p className="mt-3 max-w-xl font-serif text-3xl leading-tight">
+                  <p className="mt-2 max-w-xl font-serif text-2xl leading-tight md:text-3xl">
                     Rugs, felt textures, and decor objects composed for calm global spaces.
                   </p>
                 </div>
@@ -119,7 +122,7 @@ export default function Home() {
             <article className="image-led-card group" key={product.slug}>
               <div className="relative">
                 <AssetImage
-                  src={product.imageSrc}
+                  src={getPlacedProductImage(product.slug, product.imageSrc)}
                   alt={`${product.name} collection image`}
                   className="h-[24rem] rounded-none shadow-none"
                   imageClassName="saturate-[0.94]"
@@ -150,7 +153,7 @@ export default function Home() {
           <div className="relative">
             <div className="editorial-frame p-4">
               <AssetImage
-                src="/gallery/rug-texture.jpg"
+                src={premiumImages.loomWarm}
                 alt="Close wool rug texture and hand-finished surface"
                 className="min-h-[520px]"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -182,7 +185,7 @@ export default function Home() {
           {atelierNotes.map(([title, copy], index) => (
             <div className="image-led-card group" key={title}>
               <AssetImage
-                src={index === 0 ? "/gallery/felt-texture.jpg" : index === 1 ? "/showroom/home-decor.jpg" : "/showroom/custom-designs.jpg"}
+                src={index === 0 ? premiumImages.whiteWoolFlowers : index === 1 ? premiumImages.winterHome : premiumImages.pastelYarn}
                 alt={`${title} visual`}
                 className="h-72 rounded-none shadow-none"
                 imageClassName="saturate-[0.98] contrast-[1.03]"
@@ -212,7 +215,7 @@ export default function Home() {
         </div>
         <div className="editorial-frame p-4">
           <AssetImage
-            src="/gallery/felt-texture.jpg"
+            src={premiumImages.loomTexture}
             alt="Natural felt texture detail"
             className="min-h-[440px]"
             label="Wool Felt Texture"
