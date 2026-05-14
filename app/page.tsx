@@ -85,7 +85,7 @@ export default function Home() {
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 55vw"
-                  className="object-cover object-center saturate-[1.02] contrast-[1.04]"
+                  className="hero-editorial-drift object-cover object-center saturate-[1.02] contrast-[1.04]"
                 />
                 <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(58,42,32,0.01),rgba(58,42,32,0.18)),linear-gradient(90deg,rgba(255,252,245,0.06),transparent_44%)]" />
                 <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ivory/20 bg-walnut/42 px-5 py-4 text-ivory backdrop-blur-md md:px-6 md:py-5">

@@ -167,6 +167,25 @@ a {
     linear-gradient(135deg, #ede4d3 0%, #d9d5cc 34%, #c8b89d 62%, #a98263 100%);
 }
 
+@keyframes heroEditorialDrift {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+
+  100% {
+    transform: scale(1.06) translate3d(1%, 1%, 0);
+  }
+}
+
+.hero-editorial-drift {
+  animation: heroEditorialDrift 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
 .felt-swatch-well,
 .product-texture-well {
   background:
@@ -176,6 +195,13 @@ a {
     repeating-linear-gradient(96deg, rgba(255, 252, 245, 0.16) 0 1px, transparent 1px 8px),
     repeating-linear-gradient(38deg, rgba(58, 42, 32, 0.06) 0 1px, transparent 1px 11px),
     linear-gradient(145deg, #e7ddcb, #d9d5cc 42%, #c8b89d 78%, #b99b7f);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-editorial-drift {
+    animation: none;
+    transform: none;
+  }
 }
 
 .unwinding-wool {
