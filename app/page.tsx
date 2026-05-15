@@ -263,9 +263,11 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg leading-8 text-olive">
-            People-first production, fair payment principles, safe working
-            conditions, capacity building, and environmental responsibility
-            guide the way Haaratimata works with artisan communities.
+            Haaratimata's official Fair Trade page describes the company as
+            fair trade certified. People-first production, fair payment
+            principles, safe working conditions, capacity building, and
+            environmental responsibility guide the way Haaratimata works with
+            artisan communities.
           </p>
         </div>
       </section>
