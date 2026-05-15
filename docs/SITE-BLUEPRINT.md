@@ -366,13 +366,13 @@ Avoid:
 - Artisan network
 - Awards placeholders
 
-### Phase 6: Trade
+### Phase 6: Trade & Sustainability
 - Trade buyer page
 - Buyer types
 - Trade services
 - Trade process
 - Quote CTA
-- Sustainability planning checkpoint for Fair Trade content
+- Premium Fair Trade & Sustainability page rebuild
 - Fair Trade Certified content section
 - Fair Trade commitment section
 - Certificate/logo placeholder area
