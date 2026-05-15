@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 };
 
 const trustStats = [
-  ["Est. 1999", "Nepalese felt craft company"],
+  ["Est. 1999", "Nepal-based felt and wool brand"],
   ["Handmade in Nepal", "Human-scale production"],
   ["100% New Zealand Wool", "Natural felt material"],
   ["300+ Women Artisans", "Rural Nepal maker network"],
-  ["Trade & Export Ready", "Wholesale partner support"],
+  ["Trade & Export Ready", "Wholesale and export support"],
 ];
 
 const heroFacts = ["Est. 1999", "300+ Women Artisans", "100% New Zealand Wool"];
@@ -87,15 +87,16 @@ export default function Home() {
         <div className="relative z-10 mx-auto grid min-h-[calc(100vh-80px)] w-full max-w-[1440px] items-center gap-10 px-6 py-14 sm:px-8 md:py-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(460px,1.05fr)] lg:gap-12 lg:px-10 xl:px-12 2xl:px-8">
           <div className="w-full">
             <div className="premium-kicker mb-7">
-              Handmade Nepal Felt Wool Since 1999
+              Handmade in Nepal Since 1999
             </div>
             <h1 className="max-w-[780px] font-serif text-[clamp(52px,6vw,96px)] leading-[0.92] text-walnut">
-              Deluxe handmade felt collections for global interiors.
+              Premium handmade felt collections for global interiors.
             </h1>
             <p className="mt-8 max-w-[700px] text-lg font-semibold leading-8 text-walnut sm:text-xl sm:leading-9">
-              Haaratimata Handicrafts is a Nepal-based felt wool products
-              supplier, manufacturer, and exporter creating refined wholesale
-              collections from 100% New Zealand wool.
+              Haaratimata Handicrafts is a Nepal-based felt and wool
+              manufacturer and exporter creating refined wholesale collections
+              from 100% New Zealand wool for interiors, boutiques, and trade
+              buyers.
             </p>
             <div className="mt-8 grid w-full max-w-[700px] grid-cols-1 overflow-hidden rounded-[1.1rem] border border-walnut/12 bg-ivory/72 shadow-[0_18px_44px_rgba(58,42,32,0.09)] backdrop-blur sm:grid-cols-3">
               {heroFacts.map((fact) => (
@@ -108,8 +109,8 @@ export default function Home() {
               <Link className="button-dark min-w-48 text-center" href="/showroom">
                 View Showroom
               </Link>
-              <Link className="button-light min-w-48 text-center" href="/wholesale">
-                Request Wholesale Quote
+                <Link className="button-light min-w-48 text-center" href="/wholesale">
+                Request Trade Quote
               </Link>
             </div>
           </div>
@@ -129,7 +130,7 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 right-0 z-20 border-t border-ivory/20 bg-walnut/42 px-5 py-4 text-ivory backdrop-blur-md md:px-6 md:py-5">
                   <p className="small-caps text-gold">Premium interior collections</p>
                   <p className="mt-2 max-w-xl font-serif text-2xl leading-tight md:text-3xl">
-                    Rugs, felt textures, and decor objects composed for calm global spaces.
+                    Rugs, felt textures, and decor objects prepared for calm global interiors.
                   </p>
                 </div>
               </div>
@@ -191,13 +192,14 @@ export default function Home() {
           <div className="mt-6 space-y-5 text-lg leading-8 text-olive">
             <p>
               Established in 1999, Haaratimata Handicrafts works from a
-              Nepalese handmade felt tradition while serving global buyers who
-              need consistency, material clarity, and refined product direction.
+              Nepalese handmade felt tradition while serving buyers who need
+              consistency, material clarity, and refined product direction.
             </p>
             <p>
-              The company focuses on premium wool products across interiors,
-              gifts, accessories, pet concepts, and custom development, with a
-              network of 300+ women artisans central to the making process.
+              The company focuses on premium wool products for interiors,
+              boutiques, gifts, accessories, pet concepts, and custom
+              development, with a network of 300+ women artisans central to the
+              making process.
             </p>
           </div>
         </div>
@@ -208,7 +210,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="How We Make"
             title="A careful process shaped by material, color, and skilled hands."
-            copy="Each collection moves through a human-scale workflow built for warmth, consistency, and trade-ready finishing."
+            copy="Each collection moves through a human-scale workflow built for material consistency, careful finishing, and trade-ready presentation."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {processCards.map(([title, copy], index) => (
@@ -236,7 +238,7 @@ export default function Home() {
           <p className="mt-7 text-lg leading-8 text-olive">
             Made with 100% New Zealand wool, Haaratimata collections are
             designed around softness, durability, biodegradability, and the
-            quiet texture that makes handmade felt feel distinct.
+            quiet texture that gives handmade felt its character.
           </p>
         </div>
         <div className="editorial-frame p-4">
@@ -268,7 +270,7 @@ export default function Home() {
           <p className="mt-7 text-lg leading-8 text-olive">
             Haaratimata supports a network of 300+ women artisans, combining
             skilled handwork with repeatable production for boutiques, interior
-            designers, and trade buyers.
+            designers, and trade buyers who need reliable handmade output.
           </p>
           <div className="mt-8 max-w-sm rounded-[1.35rem] border border-walnut/10 bg-ivory/74 p-6 shadow-[0_20px_54px_rgba(58,42,32,0.08)]">
             <p className="font-serif text-5xl leading-none text-walnut">300+</p>
@@ -288,7 +290,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg leading-8 text-olive">
-            People-first production, fair payment principles, safe working
+            Fair Trade values, fair payment principles, safe working
             conditions, capacity building, and environmental responsibility
             guide the way Haaratimata works with artisan communities.
           </p>
@@ -325,7 +327,7 @@ export default function Home() {
           </div>
           <p className="max-w-2xl text-lg leading-8 text-olive">
             A quiet study of wool, color, texture, and handmade forms designed
-            for warm interiors and considered retail collections.
+            for warm interiors, boutiques, and custom development.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
@@ -382,7 +384,7 @@ export default function Home() {
                   className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 bg-gold px-6 text-sm uppercase tracking-[0.16em] text-walnut transition-colors hover:bg-ivory"
                   href="/wholesale"
                 >
-                  Start a Trade Inquiry
+                  Start Trade Inquiry
                 </Link>
                 <Link
                   className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
