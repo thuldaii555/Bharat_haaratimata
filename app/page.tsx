@@ -42,6 +42,24 @@ const tradeBenefits = [
   ],
 ];
 
+const lookbookPreview = [
+  [
+    "Color Story",
+    "Soft yarn palettes and material studies for custom development.",
+    premiumImages.lookbook.colorStoryYarn,
+  ],
+  [
+    "Material Study",
+    "Wool, tools, and tactile details behind handmade felt collections.",
+    premiumImages.lookbook.basketYarnStudy,
+  ],
+  [
+    "Interior Mood",
+    "Warm textile moments for homes, boutiques, and seasonal displays.",
+    premiumImages.lookbook.cozyHomeTextile,
+  ],
+];
+
 export default function Home() {
   return (
     <>
@@ -290,6 +308,44 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow mb-4 text-gold">Visual Notes</p>
+            <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
+              From the Lookbook
+            </h2>
+          </div>
+          <p className="max-w-2xl text-lg leading-8 text-olive">
+            A quiet study of wool, color, texture, and handmade forms designed
+            for warm interiors and considered retail collections.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {lookbookPreview.map(([label, caption, src]) => (
+            <div className="image-led-card group" key={label}>
+              <div className="relative h-[24rem] overflow-hidden">
+                <Image
+                  src={src}
+                  alt={`${label} lookbook preview`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="premium-image-hover object-cover object-center saturate-[0.96] contrast-[1.03]"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_42%,rgba(58,42,32,0.42)),linear-gradient(90deg,rgba(255,252,245,0.08),transparent_45%)]" />
+              </div>
+              <div className="p-6">
+                <p className="small-caps text-gold">{label}</p>
+                <p className="mt-4 text-lg leading-8 text-olive">{caption}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <Link className="button-light mt-10 inline-flex" href="/gallery">
+          View Lookbook
+        </Link>
       </section>
 
       <section className="section">
