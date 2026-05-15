@@ -5,9 +5,9 @@ import { AssetImage } from "../components/AssetImage";
 import { premiumImages } from "@/lib/premiumImages";
 
 export const metadata: Metadata = {
-  title: "Lookbook | Haaratimata Handicrafts",
+  title: "Gallery | Haaratimata Handicrafts",
   description:
-    "Editorial lookbook of wool, felt, color, texture, and handmade forms for interiors and trade collections.",
+    "Editorial gallery of wool, felt, color, texture, and handmade forms for interiors and trade collections.",
 };
 
 const moodBoardImages = [
@@ -108,13 +108,13 @@ export default function GalleryPage() {
     <section className="section">
       <div className="grid gap-10 md:grid-cols-[1fr_0.82fr] md:items-center">
         <div>
-          <p className="eyebrow mb-5 text-gold">Lookbook</p>
+          <p className="eyebrow mb-5 text-gold">Gallery</p>
           <h1 className="max-w-5xl font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
             Texture, color, and handmade warmth in motion.
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
             Explore visual studies of wool, felt, yarn, interior mood, product
-            detail, and handcrafted forms. The Lookbook is designed to inspire
+            detail, and handcrafted forms. The Gallery is designed to inspire
             buyers, designers, and retail partners before they explore the
             showroom.
           </p>
@@ -130,7 +130,7 @@ export default function GalleryPage() {
         <div className="editorial-frame p-4">
           <AssetImage
             src={premiumImages.lookbook.cozyHomeTextile}
-            alt="Warm interior textile lookbook mood"
+            alt="Warm interior textile gallery mood"
             className="min-h-[460px]"
             imageClassName="saturate-[0.94] contrast-[1.04]"
             label="Interior Mood"
@@ -155,7 +155,7 @@ export default function GalleryPage() {
             >
               <AssetImage
                 src={item.src}
-                alt={`${item.label} lookbook image`}
+                alt={`${item.label} gallery image`}
                 className="h-full rounded-none shadow-none"
                 imageClassName="saturate-[0.93] contrast-[1.03]"
                 sizes="(max-width: 768px) 100vw, 25vw"
@@ -218,7 +218,7 @@ export default function GalleryPage() {
             Visual direction for warm interiors and considered retail stories.
           </h2>
           <p className="mt-6 text-lg leading-8 text-olive">
-            Lookbook imagery helps buyers understand how Haaratimata products
+            Gallery imagery helps buyers understand how Haaratimata products
             can live within warm interiors, seasonal retail stories, and custom
             wholesale programs.
           </p>

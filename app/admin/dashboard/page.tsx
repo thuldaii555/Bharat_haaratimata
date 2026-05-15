@@ -22,7 +22,7 @@ const summaryCards = [
   {
     title: "Images",
     count: "Pending setup",
-    future: "Upload, replace, remove, and assign product/category/lookbook images.",
+    future: "Upload, replace, remove, and assign product/category/gallery images.",
   },
   {
     title: "Certifications",
@@ -32,7 +32,7 @@ const summaryCards = [
   {
     title: "Site Content",
     count: "Pending setup",
-    future: "Edit homepage story, trade content, sustainability content, and lookbook captions.",
+    future: "Edit homepage story, trade content, sustainability content, and gallery captions.",
   },
 ];
 
@@ -45,7 +45,7 @@ const catalogActions = [
 
 const mediaActions = [
   { title: "Image Library", href: "/admin/images", enabled: true },
-  { title: "Lookbook Images", href: "#", enabled: false },
+  { title: "Gallery Images", href: "#", enabled: false },
   { title: "Sustainability Content", href: "#", enabled: false },
   { title: "Certification Assets", href: "/admin/certifications", enabled: true },
   { title: "Site Content", href: "/admin/site-content", enabled: true },
@@ -167,7 +167,7 @@ export default function AdminDashboardPage() {
         <div className="mb-9 max-w-3xl">
           <p className="eyebrow mb-4 text-gold">Media & Content</p>
           <h2 className="font-serif text-4xl leading-tight text-walnut md:text-5xl">
-            Images, lookbook assets, sustainability content, and certifications.
+            Images, gallery assets, sustainability content, and certifications.
           </h2>
         </div>
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

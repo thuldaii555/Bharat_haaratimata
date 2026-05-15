@@ -322,7 +322,7 @@ export default function Home() {
           <div>
             <p className="eyebrow mb-4 text-gold">Visual Notes</p>
             <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
-              From the Lookbook
+              From the Gallery
             </h2>
           </div>
           <p className="max-w-2xl text-lg leading-8 text-olive">
@@ -336,7 +336,7 @@ export default function Home() {
               <div className="relative h-[24rem] overflow-hidden">
                 <Image
                   src={src}
-                  alt={`${label} lookbook preview`}
+                  alt={`${label} gallery preview`}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="premium-image-hover object-cover object-center saturate-[0.96] contrast-[1.03]"
@@ -351,7 +351,7 @@ export default function Home() {
           ))}
         </div>
         <Link className="button-light mt-10 inline-flex" href="/gallery">
-          View Lookbook
+          View Gallery
         </Link>
       </section>
 

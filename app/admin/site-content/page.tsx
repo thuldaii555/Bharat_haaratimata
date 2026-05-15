@@ -15,7 +15,7 @@ const summaryCards = [
     copy: "Fair Trade sections, WFTO standards, environmental text, and certificate copy.",
   },
   {
-    title: "Lookbook Captions",
+    title: "Gallery Captions",
     count: "Pending setup",
     copy: "Image labels, captions, section titles, and display ordering.",
   },
@@ -45,7 +45,7 @@ const contentAreas = [
       "Artisan network text",
       "Fair Trade focus card",
       "Trade CTA",
-      "Lookbook preview captions",
+      "Gallery preview captions",
     ],
   },
   {
@@ -69,7 +69,7 @@ const contentAreas = [
     ],
   },
   {
-    title: "Lookbook Content",
+    title: "Gallery Content",
     fields: [
       "Image labels",
       "Image captions",
@@ -104,7 +104,7 @@ const sampleRows = [
   ["Home", "Trust Strip", "Stats", "Edit stat labels", "Planned"],
   ["Trade", "Services", "Cards", "Add/edit/remove cards", "Planned"],
   ["Sustainability", "WFTO Standards", "Cards", "Edit descriptions", "Planned"],
-  ["Lookbook", "Captions", "Image captions", "Edit captions/order", "Planned"],
+  ["Gallery", "Captions", "Image captions", "Edit captions/order", "Planned"],
   ["Contact", "Office Details", "Contact info", "Edit office info", "Planned"],
 ];
 
@@ -155,7 +155,7 @@ export default function AdminSiteContentPage() {
         </h1>
         <p className="mt-6 max-w-4xl text-lg leading-8 text-olive md:text-xl md:leading-9">
           Future workspace for managing website text, page sections, CTA labels,
-          trust strip content, lookbook captions, sustainability content, trade
+          trust strip content, gallery captions, sustainability content, trade
           page copy, and contact office details. Authorized administrators will
           manage copy here without editing code.
         </p>

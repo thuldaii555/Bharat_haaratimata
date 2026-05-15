@@ -2,7 +2,7 @@ const summaryCards = [
   { title: "Hero Images", count: "Pending setup", copy: "Hero background image, hero feature image, and mobile hero image if needed." },
   { title: "Category Images", count: "Pending setup", copy: "Category card images, category detail hero images, and display order." },
   { title: "Product Images", count: "Pending setup", copy: "Main product image, gallery images, alt text, and image status." },
-  { title: "Lookbook Images", count: "Pending setup", copy: "Image, label, caption, display order, and active/inactive state." },
+  { title: "Gallery Images", count: "Pending setup", copy: "Image, label, caption, display order, and active/inactive state." },
   { title: "Sustainability / Trade Images", count: "Pending setup", copy: "Trade page images, sustainability images, and about/home story images." },
 ];
 
@@ -33,7 +33,7 @@ const imageSections = [
     ],
   },
   {
-    title: "Lookbook Images",
+    title: "Gallery Images",
     fields: ["Image", "Label", "Caption", "Display order", "Active/inactive"],
   },
   {

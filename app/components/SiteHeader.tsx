@@ -8,7 +8,7 @@ const navItems = [
   { label: "Showroom", href: "/showroom" },
   { label: "Trade", href: "/wholesale" },
   { label: "Sustainability", href: "/sustainability" },
-  { label: "Lookbook", href: "/gallery" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/contact" },
 ];
 
