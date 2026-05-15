@@ -134,6 +134,35 @@ Sections:
 - Fair Trade focused approach
 - Future certification placeholders
 
+#### Fair Trade & WFTO Standards Content
+
+Planning notes:
+- Haaratimata's current official website describes the company as fair trade certified.
+- The company positions itself as people-first and supportive of the artisans behind the craft.
+- The official page references the ten standards of WFTO.
+- The new website should rewrite these ideas professionally and not copy awkward/default text directly.
+
+Planned WFTO standards content:
+1. Opportunities for Disadvantaged Producers
+2. Transparency and Accountability
+3. Fair Trade Practices
+4. Fair Payment
+5. No Child Labour, No Forced Labour
+6. No Discrimination, Gender Equality, Freedom of Association
+7. Good Working Conditions
+8. Capacity Building
+9. Promote Fair Trade
+10. Respect for the Environment
+
+Content guidance:
+- Use careful, professional wording.
+- Avoid unverified details unless business confirms them.
+- If "fair trade certified" is used, later verify certification proof or display it carefully.
+- Avoid copying weak/default text from the old site.
+- Do not reuse unrelated template content from the current site.
+- The detailed Fair Trade content belongs on the Sustainability page.
+- A short Fair Trade Focus card can appear on Home.
+
 ### Lookbook
 Premium visual inspiration page.
 Sections:
@@ -342,6 +371,12 @@ Avoid:
 - Handmade production
 - Responsible production
 - Fair Trade focused approach
+- Fair Trade commitment section
+- 10 WFTO standards section
+- Fair payment / no child labor / gender equality content
+- Capacity building and working condition content
+- Environmental responsibility content
+- Careful certification wording
 
 ### Phase 8: Lookbook
 - Editorial image grid
