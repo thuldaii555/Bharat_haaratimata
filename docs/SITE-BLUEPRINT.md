@@ -138,10 +138,14 @@ Sections:
 
 Planning notes:
 - Haaratimata's current official website describes the company as fair trade certified.
+- The new website may state that Haaratimata is Fair Trade Certified based on the company's current official website.
 - The company positions itself as people-first and supportive of the artisans behind the craft.
 - The official page references the ten standards of WFTO.
 - The new website should rewrite these ideas professionally and not copy awkward/default text directly.
 - Use this content later in the Sustainability phase and reference it lightly on Home only where it supports brand trust.
+- Do not add official Fair Trade/WFTO logos or certificate images until the company provides approved assets.
+- Add certificate/logo placeholder areas in the Sustainability page design.
+- Later admin should be able to upload certificate images, certification logos, certificate numbers, and verification details.
 
 Planned WFTO standards content:
 1. Opportunities for Disadvantaged Producers
@@ -162,7 +166,10 @@ Content guidance:
 - Avoid copying weak/default text from the old site.
 - Do not reuse unrelated template content from the current site.
 - The detailed Fair Trade content belongs on the Sustainability page.
+- Home may include a short Fair Trade Certified card.
+- Detailed certification content belongs on Sustainability.
 - A short Fair Trade Focus card can appear on Home.
+- Do not invent certification numbers, dates, logos, or verification details.
 
 ### Lookbook
 Premium visual inspiration page.
@@ -366,12 +373,15 @@ Avoid:
 - Trade process
 - Quote CTA
 - Sustainability planning checkpoint for Fair Trade content
+- Fair Trade Certified content section
 - Fair Trade commitment section
+- Certificate/logo placeholder area
+- Future admin-editable certification asset section
 - 10 WFTO standards section
 - Fair payment / no child labor / gender equality content
 - Capacity building and working condition content
 - Environmental responsibility content
-- Careful certification wording
+- Careful wording guidance: do not invent certification numbers, dates, or logos
 
 ### Phase 7: Sustainability
 - Natural wool
