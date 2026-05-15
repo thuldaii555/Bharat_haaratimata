@@ -181,13 +181,14 @@ Sections:
 - Product closeups
 
 ### Future Admin Panel Strategy
-The future admin experience should be a dedicated admin panel, not inline editing on the public website UI.
+The future admin experience should be a normal admin dashboard and panel, not inline editing on the public website UI.
 
 Core idea:
 - Admin logs in and uses a dedicated admin panel to manage website content and catalog data.
 - The public website remains separate from the editing experience.
 - The admin dashboard is the central overview, with dedicated management pages for catalog, media, content, and inquiries.
 - Inline public website editing is not part of the current plan.
+- Do not build a visual CMS or contextual edit buttons over the live public site.
 
 Core admin routes planned:
 - `/admin/dashboard`
