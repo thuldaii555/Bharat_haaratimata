@@ -10,12 +10,20 @@ type InquiryFormProps = {
 type FormState = "idle" | "loading" | "success" | "error";
 
 const inquiryTypes = [
-  "Wholesale",
-  "Bulk Buy",
-  "Custom Design",
-  "Export Partnership",
   "General Inquiry",
+  "Showroom Product Question",
+  "Trade / Bulk Inquiry",
+  "Custom Design Request",
+  "Sustainability / Fair Trade Question",
+  "Partnership Inquiry",
 ];
+
+const successMessage =
+  "Thank you. Your inquiry has been received. Our team will review your message and follow up with the appropriate next step.";
+
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
 
 export function InquiryForm({ source, showInquiryType = true }: InquiryFormProps) {
   const [state, setState] = useState<FormState>("idle");
@@ -34,13 +42,20 @@ export function InquiryForm({ source, showInquiryType = true }: InquiryFormProps
       email: String(data.get("email") || "").trim(),
       phone: String(data.get("phone") || "").trim(),
       company: String(data.get("company") || "").trim(),
-      inquiryType: String(data.get("inquiryType") || "Wholesale").trim(),
+      country: String(data.get("country") || "").trim(),
+      inquiryType: String(data.get("inquiryType") || "").trim(),
       message: String(data.get("message") || "").trim(),
     };
 
-    if (!payload.name || !payload.email || !payload.message) {
+    if (!payload.name || !payload.email || !payload.inquiryType || !payload.message) {
       setState("error");
-      setMessage("Please add your name, email, and message.");
+      setMessage("Please complete your name, email, inquiry type, and message.");
+      return;
+    }
+
+    if (!isValidEmail(payload.email)) {
+      setState("error");
+      setMessage("Please enter a valid email address.");
       return;
     }
 
@@ -51,16 +66,24 @@ export function InquiryForm({ source, showInquiryType = true }: InquiryFormProps
         body: JSON.stringify(payload),
       });
 
+      const result = (await response.json().catch(() => null)) as
+        | { ok?: boolean; error?: string }
+        | null;
+
       if (!response.ok) {
-        throw new Error("Unable to submit inquiry");
+        throw new Error(result?.error || "Unable to submit inquiry");
       }
 
       form.reset();
       setState("success");
-      setMessage("Inquiry received. The next step is to connect this form to email or CRM handling.");
-    } catch {
+      setMessage(successMessage);
+    } catch (error) {
       setState("error");
-      setMessage("The inquiry could not be sent. Please try again or email the team directly.");
+      setMessage(
+        error instanceof Error && error.message
+          ? error.message
+          : "The inquiry could not be sent. Please try again or email the team directly.",
+      );
     }
   }
 
@@ -68,7 +91,7 @@ export function InquiryForm({ source, showInquiryType = true }: InquiryFormProps
     <form className="grid gap-4" onSubmit={handleSubmit}>
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="field-label">
-          Name
+          Full Name
           <input className="field-input" name="name" type="text" autoComplete="name" required />
         </label>
         <label className="field-label">
@@ -86,24 +109,36 @@ export function InquiryForm({ source, showInquiryType = true }: InquiryFormProps
           <input className="field-input" name="company" type="text" autoComplete="organization" />
         </label>
       </div>
-      {showInquiryType ? (
+      <div className="grid gap-4 sm:grid-cols-2">
         <label className="field-label">
-          Inquiry Type
-          <select className="field-input" name="inquiryType" defaultValue="Wholesale">
-            {inquiryTypes.map((type) => (
-              <option value={type} key={type}>
-                {type}
-              </option>
-            ))}
-          </select>
+          Country
+          <input className="field-input" name="country" type="text" autoComplete="country-name" />
         </label>
-      ) : null}
+        {showInquiryType ? (
+          <label className="field-label">
+            Inquiry Type
+            <select className="field-input" name="inquiryType" defaultValue="">
+              <option value="" disabled>
+                Select inquiry type
+              </option>
+              {inquiryTypes.map((type) => (
+                <option value={type} key={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : (
+          <div />
+        )}
+      </div>
       <label className="field-label">
         Message
-        <textarea className="field-input min-h-36 resize-y py-4" name="message" required />
+        <textarea className="field-input min-h-40 resize-y py-4" name="message" required />
       </label>
       {message ? (
         <p
+          aria-live="polite"
           className={`rounded-2xl border px-4 py-3 text-sm leading-6 ${
             state === "success"
               ? "border-gold/30 bg-gold/10 text-walnut"
