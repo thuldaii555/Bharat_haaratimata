@@ -21,7 +21,7 @@ function getProductStatusMessage(product: {
   quoteOnly?: boolean;
 }) {
   if (product.quoteOnly) {
-    return "Pricing is prepared after reviewing quantity, size, color, and trade requirements.";
+    return "Pricing is prepared after reviewing quantity, size, color, customization, and trade requirements.";
   }
 
   if (product.availability === "Out of Stock") {
