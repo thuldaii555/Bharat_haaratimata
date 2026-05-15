@@ -27,6 +27,12 @@ export type Product = {
   featured?: boolean;
   status: ProductStatus;
   adminNotes?: string;
+  sku?: string;
+  dimensions?: string;
+  careInstructions?: string;
+  origin?: string;
+  tags?: string[];
+  updatedAt?: string;
 
   // Compatibility fields for current showroom/detail UI. Remove after UI migration.
   category: string;
@@ -66,6 +72,10 @@ function createProduct(input: ProductInput): Product {
       input.customNote ??
       "Available for wholesale discussion, custom sampling, and buyer-led development.",
     imageSrc: input.image,
+    sku: input.sku ?? input.id.toUpperCase().replace("PROD-", "HH-"),
+    origin: input.origin ?? "Handmade in Nepal",
+    tags: input.tags ?? [input.categorySlug, input.availability.toLowerCase().replaceAll(" ", "-")],
+    updatedAt: input.updatedAt ?? "2026-05-15",
   };
 }
 
