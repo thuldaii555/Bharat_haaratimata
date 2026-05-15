@@ -180,57 +180,106 @@ Sections:
 - Color stories
 - Product closeups
 
-### Future Admin Mode: Visual Website Editing
-The future admin experience should be visual first, not a separate opaque backend.
+### Future Admin Panel Strategy
+The future admin experience should be a dedicated admin panel, not inline editing on the public website UI.
 
 Core idea:
-- Admin logs in and sees the same website as normal visitors.
-- Admin Mode adds edit controls on top of the existing UI.
-- Each editable section can expose `Edit`, `Replace Image`, `Add`, `Delete`, and `Hide/Show` controls.
-- Admin can preview the site as a visitor at any time.
-- The admin dashboard remains a control center, but the primary editing experience should be visual and contextual.
+- Admin logs in and uses a dedicated admin panel to manage website content and catalog data.
+- The public website remains separate from the editing experience.
+- The admin dashboard is the central overview, with dedicated management pages for catalog, media, content, and inquiries.
+- Inline public website editing is not part of the current plan.
 
-Examples by page:
+Core admin routes planned:
+- `/admin/dashboard`
+- `/admin/products`
+- `/admin/categories`
+- `/admin/images`
+- `/admin/inquiries`
+- `/admin/certifications`
+- `/admin/site-content`
 
-Home
-- edit hero headline and body
-- replace hero background image
-- replace hero feature image
-- edit trust strip
-- edit brand story, process, material, and fair trade sections
+Admin Dashboard:
+Central overview for products, categories, inquiries, certification assets, images, and site content.
 
-Showroom
-- add, edit, and remove categories
-- replace category images
-- add, edit, and remove products
-- update price, bulk price, size, weight, material, colors, MOQ, and lead time
-- mark products out of stock or unavailable
-- toggle quote-only
-- change display order
+Products:
+Admin can add, edit, archive, remove, and manage products.
+Fields include:
+- product name
+- category
+- description
+- short description
+- material
+- sizes
+- weight
+- colors
+- retail price
+- trade/bulk price
+- MOQ
+- lead time
+- availability
+- quote-only setting
+- product images
+- gallery images
+- featured status
 
-Sustainability
-- edit Fair Trade content
-- edit WFTO standards
-- upload certificate logos and images
-- add certificate numbers and verification details
+Categories:
+Admin can add, edit, remove, reorder, and manage category cards.
+Fields include:
+- category name
+- slug
+- description
+- image
+- display order
+- active/inactive status
 
-Lookbook
-- add, replace, and remove images
-- edit captions and labels
-- change display order
+Images:
+Admin can upload, replace, remove, and assign images to:
+- hero background
+- hero feature image
+- category cards
+- product images
+- lookbook
+- sustainability page
+- trade page
+- certificates/logos
 
-Contact
-- edit office details
-- edit inquiry type options
-- edit contact page copy
+Certifications:
+Admin can upload and manage:
+- Fair Trade logo
+- certificate images
+- certificate numbers
+- verification details
+- certification descriptions
 
-Implementation recommendation:
-- Build Level 2 admin mode, not a full drag-and-drop builder.
-- Use database-backed content blocks later.
-- Use role-based authentication later.
-- Use image upload and storage later.
-- Keep the current static TypeScript data for the prototype.
-- Do not implement this now; document it for future phases.
+Site Content:
+Admin can edit content blocks for:
+- homepage hero text
+- trust strip
+- brand story
+- how we make
+- material story
+- Fair Trade focus
+- trade CTA
+- sustainability content
+- lookbook captions
+- contact office details
+
+Inquiries:
+Admin can later review:
+- general inquiries
+- trade inquiries
+- custom design requests
+- product quote requests
+- sustainability/fair trade questions
+
+Implementation guidance:
+- Start with static TypeScript data for the prototype.
+- Later move to Supabase or database-backed admin.
+- Add authentication later.
+- Add image storage and upload later.
+- Do not build a full drag-and-drop editor.
+- Do not build inline public-page editing.
+- The admin dashboard/panel is the primary management interface.
 
 ## 6. Product Category Plan
 
@@ -453,11 +502,13 @@ Avoid:
 - Texture studies
 - Interior/product mood
 - Color stories
-- Define Admin Mode vision
-- Plan inline editing for website sections
-- Plan product/category CRUD
-- Plan image/certificate upload management
-- Keep admin dashboard as backup/control center
+- Admin dashboard structure
+- Product CRUD planning
+- Category CRUD planning
+- Image upload/edit/remove planning
+- Certification upload planning
+- Inquiry management planning
+- Site content management planning
 
 ### Phase 9: Contact, Cart, Login, Admin
 - Contact form
