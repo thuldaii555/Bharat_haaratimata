@@ -38,16 +38,16 @@ const summaryCards = [
 
 const catalogActions = [
   { title: "Manage Products", href: "/admin/products", enabled: true },
-  { title: "Manage Categories", href: "#", enabled: false },
+  { title: "Manage Categories", href: "/admin/categories", enabled: true },
   { title: "Manage Inventory Status", href: "#", enabled: false },
   { title: "Manage Trade Pricing", href: "#", enabled: false },
 ];
 
 const mediaActions = [
-  { title: "Image Library", href: "#", enabled: false },
+  { title: "Image Library", href: "/admin/images", enabled: true },
   { title: "Lookbook Images", href: "#", enabled: false },
   { title: "Sustainability Content", href: "#", enabled: false },
-  { title: "Certification Assets", href: "#", enabled: false },
+  { title: "Certification Assets", href: "/admin/certifications", enabled: true },
 ];
 
 const inquiryActions = [
