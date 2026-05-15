@@ -48,6 +48,7 @@ const mediaActions = [
   { title: "Lookbook Images", href: "#", enabled: false },
   { title: "Sustainability Content", href: "#", enabled: false },
   { title: "Certification Assets", href: "/admin/certifications", enabled: true },
+  { title: "Site Content", href: "/admin/site-content", enabled: true },
 ];
 
 const inquiryActions = [
