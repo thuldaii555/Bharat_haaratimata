@@ -99,11 +99,11 @@ export default function Home() {
       </section>
 
       <section className="trust-strip">
-        <div className="mx-auto grid max-w-7xl gap-3 px-6 py-7 sm:grid-cols-2 md:grid-cols-3 md:px-10 lg:grid-cols-5 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-3 px-6 py-6 sm:grid-cols-2 md:grid-cols-3 md:px-10 lg:grid-cols-5 lg:px-12">
           {trustStats.map(([value, label]) => (
-            <div className="rounded-2xl border border-walnut/10 bg-ivory/62 p-5 shadow-sm" key={value}>
-              <p className="font-serif text-3xl text-walnut">{value}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.13em] text-olive">{label}</p>
+            <div className="rounded-[1.15rem] border border-walnut/10 bg-ivory/68 p-4 shadow-[0_14px_34px_rgba(58,42,32,0.055),inset_0_1px_0_rgba(255,252,245,0.7)]" key={value}>
+              <p className="font-serif text-2xl leading-tight text-walnut">{value}</p>
+              <p className="mt-2 text-[0.68rem] uppercase tracking-[0.13em] text-olive">{label}</p>
             </div>
           ))}
         </div>
@@ -126,7 +126,8 @@ export default function Home() {
           <AssetImage
             src={premiumImages.loomWarm}
             alt="Handmade wool craft detail from Nepal"
-            className="min-h-[440px]"
+            className="min-h-[460px]"
+            label="Nepal Wool Craft"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
@@ -135,7 +136,7 @@ export default function Home() {
       <section className="section grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div className="editorial-frame p-4">
           <AssetImage
-            src={premiumImages.textileVariety}
+            src={premiumImages.lookbook.basketYarnStudy}
             alt="Nepalese handmade felt craft and textile display"
             className="min-h-[460px]"
             label="Founded 1999"
@@ -170,8 +171,14 @@ export default function Home() {
             copy="Each collection moves through a human-scale workflow built for warmth, consistency, and trade-ready finishing."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {processCards.map(([title, copy]) => (
-              <div className="panel" key={title}>
+            {processCards.map(([title, copy], index) => (
+              <div className="panel min-h-72" key={title}>
+                <div className="mb-8 flex items-center gap-4">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/45 bg-ivory/74 font-serif text-xl text-walnut">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div className="h-px flex-1 bg-gradient-to-r from-gold/70 to-transparent" />
+                </div>
                 <p className="small-caps text-gold">{title}</p>
                 <p className="mt-4 text-lg leading-8 text-olive">{copy}</p>
               </div>
@@ -194,7 +201,7 @@ export default function Home() {
         </div>
         <div className="editorial-frame p-4">
           <AssetImage
-            src={premiumImages.loomTexture}
+            src={premiumImages.sustainability.woolTexture}
             alt="Natural felt texture detail"
             className="min-h-[440px]"
             label="Wool Felt Texture"
@@ -206,9 +213,10 @@ export default function Home() {
       <section className="section grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
         <div className="editorial-frame p-4">
           <AssetImage
-            src={premiumImages.whiteWoolFlowers}
-            alt="Natural wool material detail"
-            className="min-h-[420px]"
+            src={premiumImages.trade.threadYarnDetail}
+            alt="Wool thread and handcraft process detail"
+            className="min-h-[440px]"
+            label="300+ Women Artisans"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
@@ -222,14 +230,36 @@ export default function Home() {
             skilled handwork with repeatable production for boutiques, interior
             designers, and trade buyers.
           </p>
+          <div className="mt-8 max-w-sm rounded-[1.35rem] border border-walnut/10 bg-ivory/74 p-6 shadow-[0_20px_54px_rgba(58,42,32,0.08)]">
+            <p className="font-serif text-5xl leading-none text-walnut">300+</p>
+            <p className="mt-3 text-xs uppercase tracking-[0.16em] text-olive">
+              Women artisans in the production network
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section pt-0">
+        <div className="showroom-panel grid gap-8 p-8 md:grid-cols-[0.78fr_1.22fr] md:items-center md:p-10">
+          <div>
+            <p className="eyebrow mb-4 text-gold">Fair Trade Focus</p>
+            <h2 className="font-serif text-4xl leading-tight text-walnut md:text-5xl">
+              People-first production with responsible standards in view.
+            </h2>
+          </div>
+          <p className="text-lg leading-8 text-olive">
+            People-first production, fair payment principles, safe working
+            conditions, capacity building, and environmental responsibility
+            guide the way Haaratimata works with artisan communities.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <SectionHeader
-          eyebrow="Awards & Recognition"
-          title="Recognition notes for future verification."
-          copy="These are editable placeholders for confirmed achievements, certifications, or milestones. They should be replaced only with verified recognition."
+          eyebrow="Prepared Credentials"
+          title="Awards & Recognition"
+          copy="This section is prepared for verified awards, certifications, export recognition, and trade credentials as the business provides official documentation."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {recognitionPlaceholders.map((title) => (
