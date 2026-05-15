@@ -69,6 +69,15 @@ a {
   text-decoration: none;
 }
 
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid rgba(184, 145, 75, 0.88);
+  outline-offset: 3px;
+}
+
+:where(a, button):focus-visible {
+  box-shadow: 0 0 0 4px rgba(255, 252, 245, 0.72), 0 0 0 7px rgba(184, 145, 75, 0.22);
+}
+
 .section {
   margin-inline: auto;
   max-width: 84rem;
@@ -405,6 +414,14 @@ a {
 
 .button-dark:hover,
 .button-light:hover {
+  transform: translateY(-1px);
+}
+
+.button-dark:focus-visible,
+.button-light:focus-visible,
+.header-action:focus-visible,
+.nav-link:focus-visible,
+.catalog-cta:focus-visible {
   transform: translateY(-1px);
 }
 
