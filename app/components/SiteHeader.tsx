@@ -21,8 +21,8 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#d8c7a3]/60 bg-[#fff8ea]/90 shadow-[0_12px_40px_rgba(58,42,32,0.08)] backdrop-blur-xl">
-      <div className="mx-auto grid max-w-[1560px] grid-cols-[360px_1fr_auto_auto] items-center gap-4 px-5 py-3">
+    <header className="sticky top-0 z-50 border-b border-[#d8c7a3]/60 bg-[#fff8ea]/88 shadow-[0_16px_48px_rgba(58,42,32,0.1)] backdrop-blur-xl">
+      <div className="mx-auto grid max-w-[1560px] grid-cols-[1fr_auto_auto] items-center gap-3 px-5 py-3 lg:grid-cols-[360px_minmax(0,1fr)_auto_auto] lg:gap-4">
         {/* Brand Logo */}
         <Link
           href="/"
@@ -40,8 +40,8 @@ export default function SiteHeader() {
         </Link>
 
         {/* Navigation */}
-        <nav className="flex min-h-[58px] items-center justify-center rounded-full border border-[#c9a968]/70 bg-[#3a2a20] px-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_10px_28px_rgba(58,42,32,0.14)]">
-          <div className="flex w-full items-center justify-center gap-1">
+        <nav className="order-4 col-span-full flex min-h-[62px] w-full items-center rounded-full border border-[#b8914b]/45 bg-[linear-gradient(135deg,rgba(74,53,38,0.82),rgba(58,42,32,0.76)_48%,rgba(94,70,48,0.7))] px-2.5 shadow-[0_18px_45px_rgba(58,42,32,0.18),0_0_26px_rgba(184,145,75,0.12),inset_0_1px_0_rgba(255,248,234,0.16)] backdrop-blur-xl lg:order-none lg:col-span-1 lg:px-3">
+          <div className="flex w-full flex-wrap items-center justify-between gap-1.5 sm:flex-nowrap">
             {navItems.map((item) => {
               const active = isActive(item.href);
 
@@ -50,10 +50,10 @@ export default function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className={[
-                    "rounded-full px-4 py-2 text-sm font-medium tracking-[0.03em] transition-all duration-200",
+                    "flex min-h-11 flex-1 basis-[calc(50%-0.375rem)] items-center justify-center rounded-full px-4 py-2 text-[15px] font-semibold tracking-[0.025em] transition-all duration-300 sm:basis-0",
                     active
-                      ? "bg-[#b8914b] text-[#fff8ea] shadow-[0_6px_18px_rgba(184,145,75,0.35)]"
-                      : "text-[#f7ead0] hover:bg-[#fff8ea]/10 hover:text-white",
+                      ? "bg-[linear-gradient(135deg,rgba(255,248,234,0.95),rgba(184,145,75,0.86))] text-[#3a2a20] shadow-[0_8px_24px_rgba(184,145,75,0.3),inset_0_1px_0_rgba(255,255,255,0.46)]"
+                      : "text-[#f8ead0] hover:bg-[#fff8ea]/13 hover:text-white hover:shadow-[0_0_18px_rgba(255,248,234,0.12)]",
                   ].join(" ")}
                 >
                   {item.label}
@@ -67,7 +67,7 @@ export default function SiteHeader() {
         <Link
           href="/showroom"
           aria-label="Cart placeholder"
-          className="flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#c9a968]/70 bg-[#fffaf0] text-[#3a2a20] shadow-[0_10px_24px_rgba(58,42,32,0.12)] transition hover:-translate-y-0.5 hover:bg-[#f2e4c8]"
+          className="order-2 flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] lg:order-none"
         >
           <svg
             width="22"
@@ -95,7 +95,7 @@ export default function SiteHeader() {
         {/* Login */}
         <Link
           href="/login"
-          className="flex h-[58px] items-center justify-center rounded-full border border-[#c9a968]/70 bg-[#fffaf0] px-7 text-sm font-semibold tracking-[0.04em] text-[#3a2a20] shadow-[0_10px_24px_rgba(58,42,32,0.12)] transition hover:-translate-y-0.5 hover:bg-[#f2e4c8]"
+          className="order-3 flex h-[58px] items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] px-7 text-[15px] font-semibold tracking-[0.035em] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] lg:order-none"
         >
           Login
         </Link>
