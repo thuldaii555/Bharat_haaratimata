@@ -104,10 +104,10 @@ export default function SustainabilityPage() {
           </h1>
           <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
             Haaratimata&apos;s official materials describe the company as Fair
-            Trade Certified and rooted in people-first production. The new
-            Sustainability page should present this commitment through clear,
-            premium storytelling around artisans, materials, working conditions,
-            environmental responsibility, and future certificate documentation.
+            Trade Certified and rooted in people-first production. This page
+            presents that commitment through clear, premium storytelling around
+            artisans, materials, working conditions, environmental
+            responsibility, and certification placeholders.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link className="button-dark" href="/showroom">
@@ -289,7 +289,7 @@ export default function SustainabilityPage() {
             The company&apos;s Fair Trade materials reference environmental
             care, recycled packaging, and solar energy usage. These points are
             presented as part of Haaratimata&apos;s responsibility story without
-            overstating broad sustainability claims.
+            overstating broader sustainability claims.
           </p>
         </div>
       </section>

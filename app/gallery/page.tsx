@@ -179,7 +179,8 @@ export default function GalleryPage() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-olive">
             A closer look at wool surfaces, yarn structure, felt density, and
-            the tactile details that make handmade pieces feel distinct.
+            the material cues that help buyers understand hand, warmth, and
+            finish.
           </p>
         </div>
         <div className="grid gap-5 md:grid-cols-3">

@@ -537,3 +537,14 @@ Avoid:
 - cheap ecommerce styling
 - unverified claims
 - over-animation
+
+## 12. Final Launch Readiness Notes
+
+- Watermarked prototype images must be replaced before public production launch.
+- Official Fair Trade / WFTO logos and certificate images should only be uploaded after company approval.
+- Admin pages are planning screens only; real auth, database storage, and uploads are not implemented yet.
+- The Contact form currently supports local/prototype submission behavior, not real email or Supabase persistence unless connected later.
+- Cart is a future quote/cart placeholder, not a real checkout flow.
+- Login is a future access placeholder, not real authentication.
+- Product prices and sample product data are prototype content and should be validated by the business before launch.
+- Final domain, SEO, analytics, and production image approvals should be completed before launch.
