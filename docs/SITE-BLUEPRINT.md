@@ -180,6 +180,58 @@ Sections:
 - Color stories
 - Product closeups
 
+### Future Admin Mode: Visual Website Editing
+The future admin experience should be visual first, not a separate opaque backend.
+
+Core idea:
+- Admin logs in and sees the same website as normal visitors.
+- Admin Mode adds edit controls on top of the existing UI.
+- Each editable section can expose `Edit`, `Replace Image`, `Add`, `Delete`, and `Hide/Show` controls.
+- Admin can preview the site as a visitor at any time.
+- The admin dashboard remains a control center, but the primary editing experience should be visual and contextual.
+
+Examples by page:
+
+Home
+- edit hero headline and body
+- replace hero background image
+- replace hero feature image
+- edit trust strip
+- edit brand story, process, material, and fair trade sections
+
+Showroom
+- add, edit, and remove categories
+- replace category images
+- add, edit, and remove products
+- update price, bulk price, size, weight, material, colors, MOQ, and lead time
+- mark products out of stock or unavailable
+- toggle quote-only
+- change display order
+
+Sustainability
+- edit Fair Trade content
+- edit WFTO standards
+- upload certificate logos and images
+- add certificate numbers and verification details
+
+Lookbook
+- add, replace, and remove images
+- edit captions and labels
+- change display order
+
+Contact
+- edit office details
+- edit inquiry type options
+- edit contact page copy
+
+Implementation recommendation:
+- Build Level 2 admin mode, not a full drag-and-drop builder.
+- Use database-backed content blocks later.
+- Use role-based authentication later.
+- Use image upload and storage later.
+- Keep the current static TypeScript data for the prototype.
+- Do not implement this now; document it for future phases.
+
 ## 6. Product Category Plan
 
 ### Rugs
@@ -401,6 +453,11 @@ Avoid:
 - Texture studies
 - Interior/product mood
 - Color stories
+- Define Admin Mode vision
+- Plan inline editing for website sections
+- Plan product/category CRUD
+- Plan image/certificate upload management
+- Keep admin dashboard as backup/control center
 
 ### Phase 9: Contact, Cart, Login, Admin
 - Contact form
