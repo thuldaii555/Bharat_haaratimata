@@ -22,12 +22,12 @@ export default function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-[#d8c7a3]/60 bg-[#fff8ea]/88 shadow-[0_16px_48px_rgba(58,42,32,0.1)] backdrop-blur-xl">
-      <div className="mx-auto grid max-w-[1560px] grid-cols-[1fr_auto_auto] items-center gap-3 px-5 py-3 lg:grid-cols-[360px_minmax(0,1fr)_auto_auto] lg:gap-4">
+      <div className="mx-auto flex max-w-[1560px] flex-wrap items-center gap-3 px-4 py-3 lg:grid lg:grid-cols-[360px_minmax(0,1fr)_auto_auto] lg:gap-4 lg:px-5">
         {/* Brand Logo */}
         <Link
           href="/"
           aria-label="Haaratimata Handicrafts Home"
-          className="flex h-[74px] w-[330px] items-center justify-center overflow-hidden rounded-[18px] bg-[#fff8ea] px-0 py-0"
+          className="order-1 flex h-[58px] w-[clamp(160px,44vw,330px)] shrink-0 items-center justify-center overflow-hidden rounded-[18px] bg-[#fff8ea] px-0 py-0 sm:h-[68px] sm:w-[280px] lg:h-[74px] lg:w-[330px]"
         >
          <Image
   src="/brand/Haaratimata-Logo.png"
@@ -40,7 +40,7 @@ export default function SiteHeader() {
         </Link>
 
         {/* Navigation */}
-        <nav className="order-4 col-span-full flex min-h-[62px] w-full items-center rounded-full border border-[#b8914b]/45 bg-[linear-gradient(135deg,rgba(74,53,38,0.82),rgba(58,42,32,0.76)_48%,rgba(94,70,48,0.7))] px-2.5 shadow-[0_18px_45px_rgba(58,42,32,0.18),0_0_26px_rgba(184,145,75,0.12),inset_0_1px_0_rgba(255,248,234,0.16)] backdrop-blur-xl lg:order-none lg:col-span-1 lg:px-3">
+        <nav className="order-4 flex min-h-[62px] basis-full items-center rounded-full border border-[#b8914b]/45 bg-[linear-gradient(135deg,rgba(74,53,38,0.82),rgba(58,42,32,0.76)_48%,rgba(94,70,48,0.7))] px-2.5 shadow-[0_18px_45px_rgba(58,42,32,0.18),0_0_26px_rgba(184,145,75,0.12),inset_0_1px_0_rgba(255,248,234,0.16)] backdrop-blur-xl lg:order-none lg:basis-auto lg:col-span-1 lg:px-3">
           <div className="flex w-full flex-wrap items-center justify-between gap-1.5 sm:flex-nowrap">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -67,7 +67,7 @@ export default function SiteHeader() {
         <Link
           href="/cart"
           aria-label="Cart"
-          className="order-2 flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] lg:order-none"
+          className="order-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] sm:h-[58px] sm:w-[58px] lg:order-none"
         >
           <svg
             width="22"
@@ -95,7 +95,7 @@ export default function SiteHeader() {
         {/* Login */}
         <Link
           href="/login"
-          className="order-3 flex h-[58px] items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] px-7 text-[15px] font-semibold tracking-[0.035em] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] lg:order-none"
+          className="order-3 flex h-11 items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] px-4 text-sm font-semibold tracking-[0.035em] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] sm:h-[58px] sm:px-7 sm:text-[15px] lg:order-none"
         >
           Login
         </Link>
