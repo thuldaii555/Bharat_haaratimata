@@ -101,7 +101,7 @@ export default function Home() {
               <Link className="button-dark min-w-48 text-center" href="/showroom">
                 View Showroom
               </Link>
-              <Link className="button-light min-w-48 text-center" href="/contact">
+              <Link className="button-light min-w-48 text-center" href="/wholesale">
                 Request Wholesale Quote
               </Link>
             </div>
@@ -281,11 +281,9 @@ export default function Home() {
             </h2>
           </div>
           <p className="text-lg leading-8 text-olive">
-            Haaratimata's official Fair Trade page describes the company as
-            fair trade certified. People-first production, fair payment
-            principles, safe working conditions, capacity building, and
-            environmental responsibility guide the way Haaratimata works with
-            artisan communities.
+            People-first production, fair payment principles, safe working
+            conditions, capacity building, and environmental responsibility
+            guide the way Haaratimata works with artisan communities.
           </p>
         </div>
       </section>
