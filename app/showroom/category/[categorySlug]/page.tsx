@@ -85,11 +85,7 @@ export default async function CategoryPage({
               const askFirst = product.quoteOnly || product.availability === "Made to Order";
               const primaryHref = askFirst ? "/contact" : `/showroom/${product.slug}`;
               const primaryLabel = askFirst ? "Ask for Quote" : "View Details";
-              const secondaryHref = askFirst
-                ? `/showroom/${product.slug}`
-                : product.availability === "Unavailable"
-                  ? "/contact"
-                  : "/contact";
+              const secondaryHref = askFirst ? `/showroom/${product.slug}` : "/contact";
               const secondaryLabel = askFirst
                 ? "View Details"
                 : product.availability === "Unavailable"
