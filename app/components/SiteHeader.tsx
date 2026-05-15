@@ -65,8 +65,8 @@ export default function SiteHeader() {
 
         {/* Cart */}
         <Link
-          href="/showroom"
-          aria-label="Cart placeholder"
+          href="/cart"
+          aria-label="Cart"
           className="order-2 flex h-[58px] w-[58px] items-center justify-center rounded-full border border-[#b8914b]/55 bg-[linear-gradient(145deg,rgba(255,250,240,0.94),rgba(242,228,200,0.74))] text-[#3a2a20] shadow-[0_12px_28px_rgba(58,42,32,0.13),inset_0_1px_0_rgba(255,255,255,0.72)] transition duration-300 hover:bg-[#fff8ea] hover:shadow-[0_16px_34px_rgba(58,42,32,0.16),0_0_18px_rgba(184,145,75,0.18)] lg:order-none"
         >
           <svg
