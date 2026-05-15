@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { products } from "@/lib/products";
-import { getPlacedProductImage, premiumImages } from "@/lib/premiumImages";
+import { premiumImages } from "@/lib/premiumImages";
 import { AssetImage } from "./components/AssetImage";
 import { SectionHeader } from "./components/SectionHeader";
 
@@ -27,6 +26,57 @@ const atelierNotes = [
   ["Material Integrity", "Dense wool felt, hand-finished texture, and natural tactility for long-use interiors."],
   ["Interior Positioning", "Rugs, decor, and custom objects planned for boutiques, hospitality, and design studios."],
   ["Export Partnership", "Sampling, color development, bulk planning, and repeatable wholesale programs from Nepal."],
+];
+
+const featuredCollections = [
+  {
+    label: "Interior Surfaces",
+    title: "Rugs",
+    description: "Soft architectural felt surfaces for homes, hospitality spaces, and curated retail programs.",
+    image: premiumImages.categories.rugs,
+  },
+  {
+    label: "Layered Textiles",
+    title: "Blankets & Throws",
+    description: "Layered wool textures for warm interiors, gifting assortments, and seasonal collections.",
+    image: premiumImages.categories.blanketsThrows,
+  },
+  {
+    label: "Textile Art",
+    title: "Wall Hangings",
+    description: "Textile-led wall pieces and felt panels designed for visual warmth and handmade character.",
+    image: premiumImages.categories.wallHangings,
+  },
+  {
+    label: "Decor Objects",
+    title: "Home Decorations",
+    description: "Baskets, garlands, table accents, and sculptural felt pieces for refined everyday spaces.",
+    image: premiumImages.categories.homeDecorations,
+  },
+  {
+    label: "Soft Play",
+    title: "Toys",
+    description: "Soft handmade felt toys and playful wool objects for boutique gifting and family spaces.",
+    image: premiumImages.categories.toys,
+  },
+  {
+    label: "Lifestyle Goods",
+    title: "Personal Accessories",
+    description: "Wearable wool goods, small accessories, and soft handmade pieces for lifestyle collections.",
+    image: premiumImages.categories.personalAccessories,
+  },
+  {
+    label: "Companion Comfort",
+    title: "Pet Accessories",
+    description: "Comfort-led felt pieces for pet-focused retail, including mats, caves, beds, and toy concepts.",
+    image: premiumImages.categories.petAccessories,
+  },
+  {
+    label: "Trade Development",
+    title: "Custom Designs",
+    description: "Buyer-led colors, forms, samples, and private-label product development for trade partners.",
+    image: premiumImages.categories.customDesigns,
+  },
 ];
 
 export default function Home() {
@@ -114,36 +164,47 @@ export default function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Product Collections"
-          title="Image-led product families for wholesale buyers."
-          copy="Each category is presented with a clear material story, premium image treatment, and practical wholesale direction for buyers planning assortments."
+          title="Featured Collections"
+          copy="Explore handmade felt and wool collections designed for interiors, boutiques, trade buyers, and custom development."
         />
-        <div className="mt-12 grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product, index) => (
-            <article className="image-led-card group" key={product.slug}>
-              <div className="relative">
-                <AssetImage
-                  src={getPlacedProductImage(product.slug, product.imageSrc)}
-                  alt={`${product.name} collection image`}
-                  className="h-[24rem] rounded-none shadow-none"
-                  imageClassName="saturate-[0.94]"
-                  label={`Collection 0${index + 1}`}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,rgba(58,42,32,0.58))]" />
-                <div className="absolute bottom-6 left-6 right-6 z-10 text-ivory">
-                  <p className="small-caps text-gold">{product.category}</p>
-                  <h3 className="mt-3 font-serif text-4xl leading-tight">
-                    {product.name}
-                  </h3>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+          {featuredCollections.map((collection) => (
+            <Link
+              className="group flex min-h-full flex-col overflow-hidden rounded-[1.35rem] border border-walnut/10 bg-ivory/76 shadow-[0_24px_70px_rgba(58,42,32,0.1)] transition duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_34px_90px_rgba(58,42,32,0.14)]"
+              href="/showroom"
+              key={collection.title}
+            >
+              <div className="relative h-[19rem] overflow-hidden bg-[radial-gradient(circle_at_22%_18%,rgba(255,252,245,0.72),transparent_9rem),radial-gradient(circle_at_78%_22%,rgba(184,145,75,0.24),transparent_11rem),linear-gradient(135deg,#e8dfd1,#d9d5cc_42%,#c8b89d_74%,#a98263)] md:h-[21rem]">
+                {collection.image ? (
+                  <Image
+                    src={collection.image}
+                    alt={`${collection.title} collection image`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
+                    className="premium-image-hover object-cover object-center saturate-[0.95] contrast-[1.03]"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center px-8 text-center">
+                    <span className="max-w-44 rounded-full border border-ivory/50 bg-ivory/72 px-5 py-3 text-xs uppercase tracking-[0.16em] text-walnut shadow-sm backdrop-blur">
+                      Product image coming soon
+                    </span>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(58,42,32,0.02),rgba(58,42,32,0.32)),linear-gradient(90deg,rgba(255,252,245,0.12),transparent_48%)]" />
+                <div className="absolute left-5 top-5 rounded-full border border-ivory/35 bg-walnut/52 px-4 py-2 text-[0.68rem] uppercase tracking-[0.16em] text-ivory backdrop-blur">
+                  {collection.label}
                 </div>
               </div>
-              <div className="p-6">
-                <p className="leading-7 text-olive">{product.summary}</p>
-                <Link className="catalog-cta mt-7" href={`/showroom/${product.slug}`}>
-                  Explore collection
-                </Link>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-serif text-3xl leading-tight text-walnut">
+                  {collection.title}
+                </h3>
+                <p className="mt-4 flex-1 leading-7 text-olive">
+                  {collection.description}
+                </p>
+                <span className="catalog-cta mt-7">Explore Collection</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </section>

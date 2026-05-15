@@ -229,6 +229,10 @@ a {
   transform: scale(1.05);
 }
 
+.group:hover .premium-image-hover {
+  transform: scale(1.05);
+}
+
 .premium-image-still {
   animation: none;
   transform: none;
