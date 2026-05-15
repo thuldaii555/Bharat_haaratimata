@@ -6,77 +6,25 @@ import { SectionHeader } from "./components/SectionHeader";
 
 const trustStats = [
   ["Est. 1999", "Nepalese felt craft company"],
-  ["300+ Women Artisans", "Rural Nepal maker network"],
-  ["100% New Zealand Wool", "Natural felt material"],
   ["Handmade in Nepal", "Human-scale production"],
-];
-
-const benefits = [
-  "Custom design development",
-  "Sampling discussion",
-  "Bulk order support",
-  "Export readiness",
-  "Ethical artisan network",
-  "Long-term buyer partnership",
+  ["100% New Zealand Wool", "Natural felt material"],
+  ["300+ Women Artisans", "Rural Nepal maker network"],
+  ["Trade & Export Ready", "Wholesale partner support"],
 ];
 
 const heroFacts = ["Est. 1999", "300+ Women Artisans", "100% New Zealand Wool"];
 
-const atelierNotes = [
-  ["Material Integrity", "Dense wool felt, hand-finished texture, and natural tactility for long-use interiors."],
-  ["Interior Positioning", "Rugs, decor, and custom objects planned for boutiques, hospitality, and design studios."],
-  ["Export Partnership", "Sampling, color development, bulk planning, and repeatable wholesale programs from Nepal."],
+const processCards = [
+  ["Wool Selection", "Carefully chosen wool gives each collection its soft, dense, and lasting foundation."],
+  ["Color Planning", "Palettes are developed for interiors, boutique assortments, and custom buyer programs."],
+  ["Felting & Shaping", "Skilled handwork transforms wool into rugs, decor, toys, accessories, and custom pieces."],
+  ["Finishing & Quality Check", "Each piece is reviewed for texture, form, consistency, and export readiness."],
 ];
 
-const featuredCollections = [
-  {
-    label: "Interior Surfaces",
-    title: "Rugs",
-    description: "Soft architectural felt surfaces for homes, hospitality spaces, and curated retail programs.",
-    image: premiumImages.categories.rugs,
-  },
-  {
-    label: "Layered Textiles",
-    title: "Blankets & Throws",
-    description: "Layered wool textures for warm interiors, gifting assortments, and seasonal collections.",
-    image: premiumImages.categories.blanketsThrows,
-  },
-  {
-    label: "Textile Art",
-    title: "Wall Hangings",
-    description: "Textile-led wall pieces and felt panels designed for visual warmth and handmade character.",
-    image: premiumImages.categories.wallHangings,
-  },
-  {
-    label: "Decor Objects",
-    title: "Home Decorations",
-    description: "Baskets, garlands, table accents, and sculptural felt pieces for refined everyday spaces.",
-    image: premiumImages.categories.homeDecorations,
-  },
-  {
-    label: "Soft Play",
-    title: "Toys",
-    description: "Soft handmade felt toys and playful wool objects for boutique gifting and family spaces.",
-    image: premiumImages.categories.toys,
-  },
-  {
-    label: "Lifestyle Goods",
-    title: "Personal Accessories",
-    description: "Wearable wool goods, small accessories, and soft handmade pieces for lifestyle collections.",
-    image: premiumImages.categories.personalAccessories,
-  },
-  {
-    label: "Companion Comfort",
-    title: "Pet Accessories",
-    description: "Comfort-led felt pieces for pet-focused retail, including mats, caves, beds, and toy concepts.",
-    image: premiumImages.categories.petAccessories,
-  },
-  {
-    label: "Trade Development",
-    title: "Custom Designs",
-    description: "Buyer-led colors, forms, samples, and private-label product development for trade partners.",
-    image: premiumImages.categories.customDesigns,
-  },
+const recognitionPlaceholders = [
+  "Export Craft Recognition",
+  "Fair Trade Focus",
+  "Artisan Network Growth",
 ];
 
 export default function Home() {
@@ -151,7 +99,7 @@ export default function Home() {
       </section>
 
       <section className="trust-strip">
-        <div className="mx-auto grid max-w-7xl gap-3 px-6 py-7 sm:grid-cols-2 md:grid-cols-4 md:px-10 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-3 px-6 py-7 sm:grid-cols-2 md:grid-cols-3 md:px-10 lg:grid-cols-5 lg:px-12">
           {trustStats.map(([value, label]) => (
             <div className="rounded-2xl border border-walnut/10 bg-ivory/62 p-5 shadow-sm" key={value}>
               <p className="font-serif text-3xl text-walnut">{value}</p>
@@ -161,117 +109,87 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <SectionHeader
-          eyebrow="Product Collections"
-          title="Featured Collections"
-          copy="Explore handmade felt and wool collections designed for interiors, boutiques, trade buyers, and custom development."
-        />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-          {featuredCollections.map((collection) => (
-            <Link
-              className="group flex min-h-full flex-col overflow-hidden rounded-[1.35rem] border border-walnut/10 bg-ivory/76 shadow-[0_24px_70px_rgba(58,42,32,0.1)] transition duration-300 hover:-translate-y-1 hover:border-gold/45 hover:shadow-[0_34px_90px_rgba(58,42,32,0.14)]"
-              href="/showroom"
-              key={collection.title}
-            >
-              <div className="relative h-[19rem] overflow-hidden bg-[radial-gradient(circle_at_22%_18%,rgba(255,252,245,0.72),transparent_9rem),radial-gradient(circle_at_78%_22%,rgba(184,145,75,0.24),transparent_11rem),linear-gradient(135deg,#e8dfd1,#d9d5cc_42%,#c8b89d_74%,#a98263)] md:h-[21rem]">
-                {collection.image ? (
-                  <Image
-                    src={collection.image}
-                    alt={`${collection.title} collection image`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
-                    className="premium-image-hover object-cover object-center saturate-[0.95] contrast-[1.03]"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center px-8 text-center">
-                    <span className="max-w-44 rounded-full border border-ivory/50 bg-ivory/72 px-5 py-3 text-xs uppercase tracking-[0.16em] text-walnut shadow-sm backdrop-blur">
-                      Product image coming soon
-                    </span>
-                  </div>
-                )}
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(58,42,32,0.02),rgba(58,42,32,0.32)),linear-gradient(90deg,rgba(255,252,245,0.12),transparent_48%)]" />
-                <div className="absolute left-5 top-5 rounded-full border border-ivory/35 bg-walnut/52 px-4 py-2 text-[0.68rem] uppercase tracking-[0.16em] text-ivory backdrop-blur">
-                  {collection.label}
-                </div>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-serif text-3xl leading-tight text-walnut">
-                  {collection.title}
-                </h3>
-                <p className="mt-4 flex-1 leading-7 text-olive">
-                  {collection.description}
-                </p>
-                <span className="catalog-cta mt-7">Explore Collection</span>
-              </div>
-            </Link>
-          ))}
+      <section className="section grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+        <div>
+          <p className="eyebrow mb-4 text-gold">Brand Story</p>
+          <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
+            Handmade in Nepal, refined for global interiors.
+          </h2>
+          <p className="mt-7 text-lg leading-8 text-olive">
+            Haaratimata Handicrafts brings Nepalese felt craft into premium
+            homes, boutiques, and trade collections. Since 1999, the brand has
+            worked with wool, texture, and handmade production to create pieces
+            that feel warm, useful, and globally relevant.
+          </p>
+        </div>
+        <div className="editorial-frame p-4">
+          <AssetImage
+            src={premiumImages.loomWarm}
+            alt="Handmade wool craft detail from Nepal"
+            className="min-h-[440px]"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </section>
 
-      <section className="luxury-band border-y border-walnut/10">
-        <div className="section grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
-          <div className="relative">
-            <div className="editorial-frame p-4">
-              <AssetImage
-                src={premiumImages.loomWarm}
-                alt="Close wool rug texture and hand-finished surface"
-                className="min-h-[520px]"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="absolute -bottom-8 right-6 max-w-sm rounded-[1.6rem] border border-walnut/10 bg-ivory/88 p-6 shadow-[0_26px_70px_rgba(58,42,32,0.16)] backdrop-blur">
-              <p className="font-serif text-3xl leading-tight text-walnut">
-                Handmade production keeps the evidence of skilled hands visible.
-              </p>
-            </div>
-          </div>
-          <div className="pt-10 md:pt-0">
-            <p className="eyebrow mb-4">Artisan Story</p>
-            <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
-              A women artisan network behind every finished piece.
-            </h2>
-            <p className="mt-7 text-lg leading-8 text-olive">
-              Established in 1999, Haaratimata supports more than 300 women
-              artisans from rural Nepal. The work connects Nepalese felt craft
-              with export-focused production for buyers who value origin,
-              consistency, and human-scale making.
+      <section className="section grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+        <div className="editorial-frame p-4">
+          <AssetImage
+            src={premiumImages.textileVariety}
+            alt="Nepalese handmade felt craft and textile display"
+            className="min-h-[460px]"
+            label="Founded 1999"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div className="showroom-panel p-8 md:p-10">
+          <p className="eyebrow mb-5 text-gold">Heritage / Who We Are</p>
+          <h2 className="font-serif text-4xl leading-tight text-walnut md:text-5xl">
+            Nepalese felt craft shaped for modern wholesale and export.
+          </h2>
+          <div className="mt-6 space-y-5 text-lg leading-8 text-olive">
+            <p>
+              Established in 1999, Haaratimata Handicrafts works from a
+              Nepalese handmade felt tradition while serving global buyers who
+              need consistency, material clarity, and refined product direction.
+            </p>
+            <p>
+              The company focuses on premium wool products across interiors,
+              gifts, accessories, pet concepts, and custom development, with a
+              network of 300+ women artisans central to the making process.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="grid gap-6 md:grid-cols-3">
-          {atelierNotes.map(([title, copy], index) => (
-            <div className="image-led-card group" key={title}>
-              <AssetImage
-                src={index === 0 ? premiumImages.whiteWoolFlowers : index === 1 ? premiumImages.winterHome : premiumImages.pastelYarn}
-                alt={`${title} visual`}
-                className="h-72 rounded-none shadow-none"
-                imageClassName="saturate-[0.98] contrast-[1.03]"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="p-6">
+      <section className="luxury-band border-y border-walnut/10">
+        <div className="section">
+          <SectionHeader
+            eyebrow="How We Make"
+            title="A careful process shaped by material, color, and skilled hands."
+            copy="Each collection moves through a human-scale workflow built for warmth, consistency, and trade-ready finishing."
+          />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {processCards.map(([title, copy]) => (
+              <div className="panel" key={title}>
                 <p className="small-caps text-gold">{title}</p>
                 <p className="mt-4 text-lg leading-8 text-olive">{copy}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section grid gap-10 md:grid-cols-[0.92fr_1.08fr] md:items-center">
         <div>
-          <p className="eyebrow mb-4 text-gold">Material & Sustainability</p>
+          <p className="eyebrow mb-4 text-gold">Material Story</p>
           <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
-            Natural wool, biodegradable felt, and careful handmade production.
+            Wool with warmth, density, and natural character.
           </h2>
           <p className="mt-7 text-lg leading-8 text-olive">
-            Haaratimata works with 100% New Zealand wool and a Fair Trade
-            focused production mindset. The result is eco-friendly felt made by
-            hand for buyers who care about material character and long-term
-            supplier relationships.
+            Made with 100% New Zealand wool, Haaratimata collections are
+            designed around softness, durability, biodegradability, and the
+            quiet texture that makes handmade felt feel distinct.
           </p>
         </div>
         <div className="editorial-frame p-4">
@@ -285,33 +203,81 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+        <div className="editorial-frame p-4">
+          <AssetImage
+            src={premiumImages.whiteWoolFlowers}
+            alt="Natural wool material detail"
+            className="min-h-[420px]"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div>
+          <p className="eyebrow mb-4 text-gold">Artisan Network</p>
+          <h2 className="font-serif text-5xl leading-tight text-walnut md:text-6xl">
+            A human-scale production network.
+          </h2>
+          <p className="mt-7 text-lg leading-8 text-olive">
+            Haaratimata supports a network of 300+ women artisans, combining
+            skilled handwork with repeatable production for boutiques, interior
+            designers, and trade buyers.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <SectionHeader
+          eyebrow="Awards & Recognition"
+          title="Recognition notes for future verification."
+          copy="These are editable placeholders for confirmed achievements, certifications, or milestones. They should be replaced only with verified recognition."
+        />
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {recognitionPlaceholders.map((title) => (
+            <div className="panel min-h-44" key={title}>
+              <div className="mb-8 h-px bg-gradient-to-r from-gold to-transparent" />
+              <p className="font-serif text-3xl text-walnut">{title}</p>
+              <p className="mt-4 text-sm leading-6 text-olive">
+                Editable placeholder. Replace with verified details before
+                presenting as a formal award, certification, or claim.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section className="section">
         <div className="overflow-hidden rounded-[2.4rem] bg-[linear-gradient(135deg,#3a2a20,#4b3526)] px-6 py-16 text-ivory shadow-[0_36px_100px_rgba(58,42,32,0.24)] md:px-12">
           <div className="gold-rule mb-10" />
-          <p className="eyebrow mb-5 text-gold">Wholesale & Export</p>
+          <p className="eyebrow mb-5 text-gold">Next Step</p>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-end">
             <h2 className="max-w-4xl font-serif text-5xl leading-tight md:text-7xl">
-              A serious supplier conversation for global buyers.
+              Explore the showroom or begin a trade conversation.
             </h2>
             <p className="text-lg leading-8 text-ivory/72">
-              Build a focused felt assortment with a Nepal-based export partner
-              that understands sampling, customization, bulk orders, and Fair
-              Trade focused production.
+              Move from brand story into catalog browsing, custom development,
+              and wholesale planning with the Haaratimata team.
             </p>
           </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {benefits.map((benefit) => (
-              <div className="rounded-[1.4rem] border border-ivory/12 bg-ivory/6 p-5" key={benefit}>
-                <p className="small-caps text-gold">{benefit}</p>
-              </div>
-            ))}
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Link
+              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 bg-gold px-6 text-sm uppercase tracking-[0.16em] text-walnut transition-colors hover:bg-ivory"
+              href="/showroom"
+            >
+              Explore Showroom
+            </Link>
+            <Link
+              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
+              href="/wholesale"
+            >
+              Trade Inquiries
+            </Link>
+            <Link
+              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
+              href="/contact"
+            >
+              Contact Us
+            </Link>
           </div>
-          <Link
-            className="mt-10 inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:bg-gold hover:text-walnut"
-            href="/contact"
-          >
-            Request Wholesale Quote
-          </Link>
         </div>
       </section>
     </>
