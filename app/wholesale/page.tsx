@@ -68,7 +68,7 @@ const tradeServices = [
 const tradeProcess = [
   {
     title: "Inquiry",
-    copy: "Share your category interest, market, target quantity, and timeline so the conversation starts clearly.",
+    copy: "Share your category interest, target quantity, and timeline so the conversation starts clearly.",
   },
   {
     title: "Design Discussion",
@@ -97,23 +97,23 @@ export default function WholesalePage() {
     <section className="section">
       <div className="grid gap-10 md:grid-cols-[1fr_0.82fr] md:items-center">
         <div>
-          <p className="eyebrow mb-5 text-gold">Trade</p>
-          <h1 className="max-w-5xl font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
-            For buyers who need craft, consistency, and custom development.
-          </h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
+            <p className="eyebrow mb-5 text-gold">Trade</p>
+            <h1 className="max-w-5xl font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
+              For buyers who need craft, consistency, and custom development.
+            </h1>
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
             Haaratimata partners with boutiques, interior designers, hospitality
             buyers, importers, and retail teams seeking handmade felt and wool
-            collections with thoughtful material quality, ethical production
+            collections with thoughtful material quality, fair production
             values, and export-ready planning.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link className="button-dark" href="/contact">
-              Start a Trade Inquiry
-            </Link>
-            <Link className="button-light" href="/showroom">
-              Explore Showroom
-            </Link>
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link className="button-dark" href="/contact">
+              Start Trade Inquiry
+              </Link>
+              <Link className="button-light" href="/showroom">
+                Explore Showroom
+              </Link>
           </div>
         </div>
         <div className="editorial-frame p-4">
@@ -254,12 +254,12 @@ export default function WholesalePage() {
       </section>
 
       <div className="luxury-band mt-16 rounded-[1.65rem] border border-walnut/10 p-6 md:p-8">
-        <p className="eyebrow mb-4 text-gold">Trade Buyer Note</p>
-        <p className="max-w-5xl font-serif text-3xl leading-tight text-walnut md:text-4xl">
+            <p className="eyebrow mb-4 text-gold">Trade Buyer Note</p>
+            <p className="max-w-5xl font-serif text-3xl leading-tight text-walnut md:text-4xl">
           Trade pricing, MOQ, lead time, and final production details depend on
           product type, size, color, quantity, customization level, and delivery
           requirements.
-        </p>
+            </p>
       </div>
 
       <section className="mt-16 overflow-hidden rounded-[2rem] bg-walnut text-ivory shadow-[0_32px_90px_rgba(58,42,32,0.2)]">
@@ -271,9 +271,10 @@ export default function WholesalePage() {
               Ready to discuss a trade collection?
             </h2>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-ivory/72">
-              Share your category interest, target quantity, design direction,
-              and market needs. Haaratimata can help shape a practical starting
-              point for samples, pricing, and production planning.
+              Share your product category, approximate quantity, size and color
+              requirements, market or retail program, and timeline if available.
+              Haaratimata can help shape a practical starting point for
+              samples, pricing, and production planning.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link className="button-light" href="/contact">
