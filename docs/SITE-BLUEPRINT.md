@@ -548,3 +548,4 @@ Avoid:
 - Login is a future access placeholder, not real authentication.
 - Product prices and sample product data are prototype content and should be validated by the business before launch.
 - Final domain, SEO, analytics, and production image approvals should be completed before launch.
+- See [docs/LAUNCH-GAPS.md](LAUNCH-GAPS.md) for the final production launch gaps and business review checklist.
