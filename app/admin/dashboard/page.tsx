@@ -51,6 +51,7 @@ const mediaActions = [
 ];
 
 const inquiryActions = [
+  { title: "Inquiry Management", href: "/admin/inquiries", enabled: true },
   { title: "Contact Inquiries", href: "#", enabled: false },
   { title: "Trade Inquiries", href: "#", enabled: false },
   { title: "Custom Design Requests", href: "#", enabled: false },
