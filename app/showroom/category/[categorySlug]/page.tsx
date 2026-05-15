@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -14,6 +15,28 @@ const availabilityClass: Record<Availability, string> = {
 
 export function generateStaticParams() {
   return categories.map((category) => ({ categorySlug: category.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ categorySlug: string }>;
+}): Promise<Metadata> {
+  const { categorySlug } = await params;
+  const category = getCategoryBySlug(categorySlug);
+
+  if (!category) {
+    return {
+      title: "Showroom | Haaratimata Handicrafts",
+      description:
+        "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+    };
+  }
+
+  return {
+    title: `${category.name} | Showroom | Haaratimata Handicrafts`,
+    description: category.description,
+  };
 }
 
 export default async function CategoryPage({

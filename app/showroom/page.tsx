@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { SectionHeader } from "../components/SectionHeader";
 import { categories } from "@/lib/categories";
+
+export const metadata: Metadata = {
+  title: "Showroom | Haaratimata Handicrafts",
+  description:
+    "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+};
 
 export default function ShowroomPage() {
   return (

@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import { AssetImage } from "../components/AssetImage";
 import { InquiryForm } from "../components/InquiryForm";
 import { premiumImages } from "@/lib/premiumImages";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Haaratimata Handicrafts",
+  description:
+    "Contact Haaratimata Handicrafts in Nepal or the United States for showroom, trade, custom development, or partnership inquiries.",
+};
 
 const offices = [
   {

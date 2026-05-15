@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -40,6 +41,28 @@ function getProductStatusMessage(product: {
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
+
+  if (!product) {
+    return {
+      title: "Showroom | Haaratimata Handicrafts",
+      description:
+        "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+    };
+  }
+
+  return {
+    title: `${product.name} | Haaratimata Handicrafts`,
+    description: product.shortDescription,
+  };
 }
 
 export default async function ProductDetailPage({

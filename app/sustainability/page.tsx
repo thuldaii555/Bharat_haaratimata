@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AssetImage } from "../components/AssetImage";
 import { premiumImages } from "@/lib/premiumImages";
+
+export const metadata: Metadata = {
+  title: "Sustainability & Fair Trade | Haaratimata Handicrafts",
+  description:
+    "Fair Trade Certified positioning, WFTO-aligned principles, artisan welfare, natural wool, and environmental responsibility.",
+};
 
 const overviewCards = [
   {

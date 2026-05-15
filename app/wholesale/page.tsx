@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AssetImage } from "../components/AssetImage";
 import { categories } from "@/lib/categories";
 import { premiumImages } from "@/lib/premiumImages";
+
+export const metadata: Metadata = {
+  title: "Trade Program | Haaratimata Handicrafts",
+  description:
+    "Trade and wholesale program for boutiques, interior designers, hospitality buyers, importers, and custom development partners.",
+};
 
 const buyerGroups = [
   {

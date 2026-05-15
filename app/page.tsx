@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { premiumImages } from "@/lib/premiumImages";
 import { AssetImage } from "./components/AssetImage";
 import { SectionHeader } from "./components/SectionHeader";
+
+export const metadata: Metadata = {
+  title: "Haaratimata Handicrafts | Handmade Felt & Wool Products from Nepal",
+  description:
+    "Premium handmade felt and wool products from Nepal for interiors, boutiques, trade buyers, and custom wholesale programs.",
+};
 
 const trustStats = [
   ["Est. 1999", "Nepalese felt craft company"],

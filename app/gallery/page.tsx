@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AssetImage } from "../components/AssetImage";
 import { premiumImages } from "@/lib/premiumImages";
+
+export const metadata: Metadata = {
+  title: "Lookbook | Haaratimata Handicrafts",
+  description:
+    "Editorial lookbook of wool, felt, color, texture, and handmade forms for interiors and trade collections.",
+};
 
 const moodBoardImages = [
   {
