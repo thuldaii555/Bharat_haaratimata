@@ -7,7 +7,7 @@ import { categories } from "@/lib/categories";
 export const metadata: Metadata = {
   title: "Showroom | Haaratimata Handicrafts",
   description:
-    "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+    "Browse handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom development programs.",
 };
 
 export default function ShowroomPage() {
@@ -17,7 +17,7 @@ export default function ShowroomPage() {
         <SectionHeader
           eyebrow="Showroom"
           title="Showroom"
-          copy="Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs."
+          copy="Browse handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom development programs."
         />
       </section>
 
@@ -26,12 +26,12 @@ export default function ShowroomPage() {
           <div>
             <p className="eyebrow mb-4 text-gold">Category Browsing</p>
             <h2 className="font-serif text-4xl leading-tight text-walnut md:text-5xl">
-              Shop by collection category.
+              Browse by collection category.
             </h2>
           </div>
           <p className="max-w-2xl text-lg leading-8 text-olive">
-            Choose a product family to browse rugs, decor, toys, accessories,
-            pet concepts, and custom development programs.
+            Choose a category to review the showroom collection, compare
+            materials, and move toward product detail or quote inquiry.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function ShowroomPage() {
                 <p className="mt-4 flex-1 leading-7 text-olive">
                   {category.shortDescription}
                 </p>
-                <span className="catalog-cta mt-7">Explore Category</span>
+                <span className="catalog-cta mt-7">View Category</span>
               </div>
             </Link>
           ))}
@@ -102,8 +102,8 @@ export default function ShowroomPage() {
               Looking for custom development or trade pricing?
             </h2>
             <p className="text-lg leading-8 text-ivory/72">
-              Share your buyer brief, target assortment, palette direction, or
-              volume plan and begin a focused wholesale conversation.
+              Share your buyer brief, category interest, palette direction, or
+              volume plan and begin a focused trade conversation.
             </p>
           </div>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -111,7 +111,7 @@ export default function ShowroomPage() {
               className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 bg-gold px-6 text-sm uppercase tracking-[0.16em] text-walnut transition-colors hover:bg-ivory"
               href="/wholesale"
             >
-              Start a Trade Inquiry
+              Start Trade Inquiry
             </Link>
             <Link
               className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"

@@ -29,7 +29,7 @@ export async function generateMetadata({
     return {
       title: "Showroom | Haaratimata Handicrafts",
       description:
-        "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+        "Browse handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom development programs.",
     };
   }
 
@@ -67,7 +67,7 @@ export default async function CategoryPage({
               {category.description}
             </p>
             <div className="mt-8 inline-flex rounded-full border border-walnut/10 bg-ivory/74 px-5 py-3 text-xs uppercase tracking-[0.16em] text-walnut shadow-sm">
-              {productCount} active {productCount === 1 ? "product" : "products"}
+              {productCount} active {productCount === 1 ? "product" : "products"} in this collection
             </div>
           </div>
           <div className="editorial-frame p-4">
@@ -143,7 +143,7 @@ export default async function CategoryPage({
                     </div>
                     {limitedAvailability ? (
                       <div className="absolute bottom-5 left-5 rounded-full border border-gold/55 bg-ivory/86 px-4 py-2 text-[0.68rem] uppercase tracking-[0.16em] text-walnut shadow-sm backdrop-blur">
-                        Check availability
+                        Availability by request
                       </div>
                     ) : null}
                   </div>
@@ -181,7 +181,7 @@ export default async function CategoryPage({
                       <div className="grid gap-4 rounded-[1rem] border border-walnut/10 bg-ivory/58 p-4 sm:grid-cols-2">
                         <div>
                           <dt className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
-                            Price
+                            Retail
                           </dt>
                           <dd className={`mt-1 font-serif leading-tight text-walnut ${product.quoteOnly ? "text-xl" : "text-2xl"}`}>
                             {priceLabel}
@@ -190,7 +190,7 @@ export default async function CategoryPage({
                         {product.bulkPrice ? (
                           <div>
                             <dt className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
-                              Trade
+                              Trade Pricing
                             </dt>
                             <dd className="mt-1 font-serif text-xl leading-tight text-walnut">
                               {product.bulkPrice}

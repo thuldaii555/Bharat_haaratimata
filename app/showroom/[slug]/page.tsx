@@ -55,7 +55,7 @@ export async function generateMetadata({
     return {
       title: "Showroom | Haaratimata Handicrafts",
       description:
-        "Explore handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom wholesale programs.",
+        "Browse handmade felt and wool collections developed for interiors, boutiques, trade buyers, and custom development programs.",
     };
   }
 
@@ -128,7 +128,7 @@ export default async function ProductDetailPage({
             <div className="mt-8 grid gap-4 rounded-[1.25rem] border border-walnut/10 bg-ivory/64 p-5 sm:grid-cols-2">
               <div>
                 <p className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
-                  Price
+                  Retail
                 </p>
                 <p className={`mt-2 font-serif leading-tight text-walnut ${product.quoteOnly ? "text-2xl" : "text-3xl"}`}>
                   {priceLabel}
@@ -137,7 +137,7 @@ export default async function ProductDetailPage({
               {product.bulkPrice ? (
                 <div>
                   <p className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
-                    Trade
+                    Trade Pricing
                   </p>
                   <p className="mt-2 font-serif text-2xl leading-tight text-walnut">
                     {product.bulkPrice}
