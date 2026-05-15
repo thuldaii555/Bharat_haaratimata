@@ -15,6 +15,29 @@ const availabilityClass: Record<Availability, string> = {
   Unavailable: "border-walnut/10 bg-stone-200/80 text-olive/78",
 };
 
+function getProductStatusMessage(product: {
+  availability: Availability;
+  quoteOnly?: boolean;
+}) {
+  if (product.quoteOnly) {
+    return "Pricing is prepared after reviewing quantity, size, color, and trade requirements.";
+  }
+
+  if (product.availability === "Out of Stock") {
+    return "This item is currently out of stock. Contact us for restock timing or custom alternatives.";
+  }
+
+  if (product.availability === "Unavailable") {
+    return "This item is currently unavailable. Contact us to discuss alternatives.";
+  }
+
+  if (product.availability === "Made to Order") {
+    return "Made to order. Lead time and final pricing may vary by size, color, and quantity.";
+  }
+
+  return "Available for catalog discussion, trade pricing, and wholesale planning.";
+}
+
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
 }
@@ -37,6 +60,7 @@ export default async function ProductDetailPage({
   const galleryImages =
     product.gallery && product.gallery.length > 0 ? product.gallery : [product.image];
   const priceLabel = product.quoteOnly ? "Ask for Quote" : product.retailPrice;
+  const statusMessage = getProductStatusMessage(product);
 
   return (
     <>
@@ -83,7 +107,7 @@ export default async function ProductDetailPage({
                 <p className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
                   Price
                 </p>
-                <p className="mt-2 font-serif text-3xl leading-tight text-walnut">
+                <p className={`mt-2 font-serif leading-tight text-walnut ${product.quoteOnly ? "text-2xl" : "text-3xl"}`}>
                   {priceLabel}
                 </p>
               </div>
@@ -97,6 +121,10 @@ export default async function ProductDetailPage({
                   </p>
                 </div>
               ) : null}
+            </div>
+
+            <div className="mt-5 rounded-[1.15rem] border border-walnut/10 bg-ivory/70 p-5 text-sm leading-6 text-olive">
+              {statusMessage}
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

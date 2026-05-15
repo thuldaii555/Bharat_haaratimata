@@ -81,15 +81,25 @@ export default async function CategoryPage({
                   : product.sizes.join(", ");
               const limitedAvailability =
                 product.availability === "Out of Stock" || product.availability === "Unavailable";
-              const primaryHref = product.quoteOnly ? "/contact" : `/showroom/${product.slug}`;
-              const primaryLabel = product.quoteOnly ? "Ask for Quote" : "View Details";
-              const secondaryHref = product.quoteOnly ? `/showroom/${product.slug}` : "/contact";
-              const secondaryLabel = product.quoteOnly ? "View Details" : "Ask for Quote";
+              const dimUnavailable = product.availability === "Unavailable";
+              const askFirst = product.quoteOnly || product.availability === "Made to Order";
+              const primaryHref = askFirst ? "/contact" : `/showroom/${product.slug}`;
+              const primaryLabel = askFirst ? "Ask for Quote" : "View Details";
+              const secondaryHref = askFirst
+                ? `/showroom/${product.slug}`
+                : product.availability === "Unavailable"
+                  ? "/contact"
+                  : "/contact";
+              const secondaryLabel = askFirst
+                ? "View Details"
+                : product.availability === "Unavailable"
+                  ? "Contact Us"
+                  : "Ask for Quote";
               const priceLabel = product.quoteOnly ? "Ask for Quote" : product.retailPrice;
 
               return (
                 <article
-                  className="image-led-card group flex min-h-full flex-col transition-transform duration-300 hover:-translate-y-1"
+                  className={`image-led-card group flex min-h-full flex-col transition-transform duration-300 hover:-translate-y-1 ${dimUnavailable ? "opacity-75" : ""}`}
                   key={product.id}
                 >
                   <div className="relative h-80 overflow-hidden rounded-t-[1.45rem] bg-[radial-gradient(circle_at_22%_18%,rgba(255,252,245,0.72),transparent_9rem),radial-gradient(circle_at_78%_22%,rgba(184,145,75,0.24),transparent_11rem),linear-gradient(135deg,#e8dfd1,#d9d5cc_42%,#c8b89d_74%,#a98263)]">
@@ -154,7 +164,7 @@ export default async function CategoryPage({
                           <dt className="text-[0.68rem] uppercase tracking-[0.16em] text-olive/70">
                             Price
                           </dt>
-                          <dd className="mt-1 font-serif text-2xl leading-tight text-walnut">
+                          <dd className={`mt-1 font-serif leading-tight text-walnut ${product.quoteOnly ? "text-xl" : "text-2xl"}`}>
                             {priceLabel}
                           </dd>
                         </div>
