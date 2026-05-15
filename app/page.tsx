@@ -27,6 +27,21 @@ const recognitionPlaceholders = [
   "Artisan Network Growth",
 ];
 
+const tradeBenefits = [
+  [
+    "Custom Design Development",
+    "Buyer-led colors, forms, sizing, and product concepts for curated collections.",
+  ],
+  [
+    "Export-Ready Production",
+    "Repeatable handmade production with attention to quality, finish, and buyer requirements.",
+  ],
+  [
+    "Ethical Artisan Network",
+    "A women-led artisan network combining skilled handwork with responsible production values.",
+  ],
+];
+
 export default function Home() {
   return (
     <>
@@ -276,37 +291,53 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <div className="overflow-hidden rounded-[2.4rem] bg-[linear-gradient(135deg,#3a2a20,#4b3526)] px-6 py-16 text-ivory shadow-[0_36px_100px_rgba(58,42,32,0.24)] md:px-12">
-          <div className="gold-rule mb-10" />
-          <p className="eyebrow mb-5 text-gold">Next Step</p>
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.78fr] lg:items-end">
-            <h2 className="max-w-4xl font-serif text-5xl leading-tight md:text-7xl">
-              Explore the showroom or begin a trade conversation.
-            </h2>
-            <p className="text-lg leading-8 text-ivory/72">
-              Move from brand story into catalog browsing, custom development,
-              and wholesale planning with the Haaratimata team.
-            </p>
-          </div>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link
-              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 bg-gold px-6 text-sm uppercase tracking-[0.16em] text-walnut transition-colors hover:bg-ivory"
-              href="/showroom"
-            >
-              Explore Showroom
-            </Link>
-            <Link
-              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
-              href="/wholesale"
-            >
-              Trade Inquiries
-            </Link>
-            <Link
-              className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
-              href="/contact"
-            >
-              Contact Us
-            </Link>
+        <div className="overflow-hidden rounded-[2.4rem] bg-[radial-gradient(circle_at_14%_18%,rgba(184,145,75,0.24),transparent_18rem),linear-gradient(135deg,#3a2a20,#4b3526_54%,#2f221b)] text-ivory shadow-[0_36px_100px_rgba(58,42,32,0.24)]">
+          <div className="grid gap-0 lg:grid-cols-[1fr_0.72fr]">
+            <div className="px-6 py-16 md:px-12">
+              <div className="gold-rule mb-10" />
+              <p className="eyebrow mb-5 text-gold">Trade Partnership</p>
+              <h2 className="max-w-5xl font-serif text-5xl leading-tight md:text-7xl">
+                For trade buyers, designers, and global retail partners.
+              </h2>
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-ivory/72">
+                Haaratimata supports custom development, bulk planning, sampling
+                discussions, and repeatable felt/wool production for boutiques,
+                interior designers, hospitality buyers, and export partners.
+              </p>
+
+              <div className="mt-10 grid gap-4 md:grid-cols-3">
+                {tradeBenefits.map(([title, copy]) => (
+                  <div className="rounded-[1.35rem] border border-ivory/14 bg-ivory/8 p-5 shadow-[inset_0_1px_0_rgba(255,252,245,0.1)] backdrop-blur" key={title}>
+                    <p className="small-caps text-gold">{title}</p>
+                    <p className="mt-4 text-sm leading-6 text-ivory/72">{copy}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-gold/70 bg-gold px-6 text-sm uppercase tracking-[0.16em] text-walnut transition-colors hover:bg-ivory"
+                  href="/wholesale"
+                >
+                  Start a Trade Inquiry
+                </Link>
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center rounded-[0.9rem] border border-ivory/35 px-6 text-sm uppercase tracking-[0.16em] text-ivory transition-colors hover:border-gold hover:text-gold"
+                  href="/showroom"
+                >
+                  Explore Showroom
+                </Link>
+              </div>
+            </div>
+            <div className="min-h-[360px] lg:min-h-full">
+              <AssetImage
+                src={premiumImages.trade.weavingLoomDetail}
+                alt="Trade-ready handmade wool production detail"
+                className="h-full min-h-[360px] rounded-none shadow-none"
+                imageClassName="saturate-[0.96] contrast-[1.04]"
+                sizes="(max-width: 1024px) 100vw, 35vw"
+              />
+            </div>
           </div>
         </div>
       </section>
