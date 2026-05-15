@@ -141,6 +141,7 @@ Planning notes:
 - The company positions itself as people-first and supportive of the artisans behind the craft.
 - The official page references the ten standards of WFTO.
 - The new website should rewrite these ideas professionally and not copy awkward/default text directly.
+- Use this content later in the Sustainability phase and reference it lightly on Home only where it supports brand trust.
 
 Planned WFTO standards content:
 1. Opportunities for Disadvantaged Producers
@@ -364,6 +365,13 @@ Avoid:
 - Trade services
 - Trade process
 - Quote CTA
+- Sustainability planning checkpoint for Fair Trade content
+- Fair Trade commitment section
+- 10 WFTO standards section
+- Fair payment / no child labor / gender equality content
+- Capacity building and working condition content
+- Environmental responsibility content
+- Careful certification wording
 
 ### Phase 7: Sustainability
 - Natural wool
