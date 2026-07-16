@@ -1,11 +1,10 @@
 # Haaratimata Admin Backend Plan
 
 ## Current Phase
-Phase 13B: Supabase environment and client foundation only.
+Phase 13C: Supabase Auth connected for admin login.
 
-Supabase packages and client helper files are prepared. Authentication, database
-persistence, image upload, and product/content editing are intentionally not
-connected yet.
+Supabase Auth is connected for admin login. Database persistence, image upload,
+and product/content editing are intentionally not connected yet.
 
 ## Phase 13B
 - Supabase free project created.
@@ -13,7 +12,14 @@ connected yet.
 - Supabase client helpers added.
 - No real auth/database/storage connected yet.
 - Service role key should not be exposed.
-- Next phase will connect admin login using Supabase Auth.
+- Phase 13C connects admin login using Supabase Auth.
+
+## Phase 13C
+- Supabase Auth connected for admin login.
+- Admin access restricted by ADMIN_ALLOWED_EMAILS.
+- Admin pages protected.
+- Logout added.
+- Product/database/image features not connected yet.
 
 ## Future Backend
 Recommended backend: Supabase
@@ -48,11 +54,11 @@ needed later, keep it server-side only and never use it in browser code.
 - inquiries
 
 ## Implementation Order
-1. Create free Supabase project
-2. Add env variables
-3. Install Supabase client
-4. Connect admin login
-5. Protect admin routes
+1. Create free Supabase project - complete
+2. Add env variables - complete
+3. Install Supabase client - complete
+4. Connect admin login - complete
+5. Protect admin routes - complete
 6. Move products/categories to database
 7. Add image storage
 8. Connect inquiries

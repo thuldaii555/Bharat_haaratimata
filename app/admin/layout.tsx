@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { isAllowedAdminEmail } from "@/lib/supabase/env";
+import { createOptionalSupabaseServerClient } from "@/lib/supabase/server";
+
 const adminNavItems = [
   { label: "Dashboard", href: "/admin/dashboard" },
   { label: "Products", href: "/admin/products" },
@@ -11,7 +14,15 @@ const adminNavItems = [
   { label: "Site Content", href: "/admin/site-content" },
 ];
 
-export default function AdminLayout({ children }: { children: ReactNode }) {
+export default async function AdminLayout({ children }: { children: ReactNode }) {
+  const supabase = await createOptionalSupabaseServerClient();
+  const {
+    data: { user },
+  } = supabase
+    ? await supabase.auth.getUser()
+    : { data: { user: null } };
+  const adminEmail = isAllowedAdminEmail(user?.email) ? user?.email : null;
+
   return (
     <div className="admin-shell">
       <div className="mx-auto grid max-w-[92rem] gap-6 px-4 py-6 md:px-6 lg:grid-cols-[18rem_1fr] lg:py-8">
@@ -23,12 +34,15 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                 Admin
               </h1>
             </div>
-            <span className="admin-status-badge shrink-0">Planning Mode</span>
+            <span className="admin-status-badge shrink-0">
+              {adminEmail ? "Authenticated" : "Planning Mode"}
+            </span>
           </div>
 
           <p className="mt-5 text-sm leading-6 text-olive">
-            Admin tools are prepared for future Supabase connection. Editing is
-            currently disabled.
+            {adminEmail
+              ? `Signed in as ${adminEmail}. Editing is currently disabled.`
+              : "Supabase Auth is connected for admin access. Editing is currently disabled."}
           </p>
 
           <nav aria-label="Admin navigation" className="mt-6 grid gap-2">
@@ -39,9 +53,15 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             ))}
           </nav>
 
-          <Link className="button-light mt-6 w-full" href="/admin/login">
-            Admin Login
-          </Link>
+          {adminEmail ? (
+            <Link className="button-light mt-6 w-full" href="/admin/logout">
+              Logout
+            </Link>
+          ) : (
+            <Link className="button-light mt-6 w-full" href="/admin/login">
+              Admin Login
+            </Link>
+          )}
         </aside>
 
         <main>{children}</main>

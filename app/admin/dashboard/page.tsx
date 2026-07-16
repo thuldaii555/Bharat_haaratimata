@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { categories } from "@/lib/categories";
 import { getActiveProducts } from "@/lib/products";
+import { isAllowedAdminEmail } from "@/lib/supabase/env";
+import { createOptionalSupabaseServerClient } from "@/lib/supabase/server";
 
 const dashboardCards = [
   {
@@ -42,7 +44,15 @@ const dashboardCards = [
   },
 ];
 
-export default function AdminDashboardPage() {
+export default async function AdminDashboardPage() {
+  const supabase = await createOptionalSupabaseServerClient();
+  const {
+    data: { user },
+  } = supabase
+    ? await supabase.auth.getUser()
+    : { data: { user: null } };
+  const adminEmail = isAllowedAdminEmail(user?.email) ? user?.email : null;
+
   return (
     <section className="section !py-0">
       <div className="showroom-panel p-8 md:p-10">
@@ -53,22 +63,24 @@ export default function AdminDashboardPage() {
               Future management hub for Haaratimata.
             </h2>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
-              Supabase environment foundation prepared. Authentication
-              connection is next. No editing, upload, authentication, or
-              database actions are active yet.
+              Supabase Auth is connected for admin access. No product editing,
+              upload, database table, or CRUD actions are active yet.
             </p>
           </div>
-          <Link className="button-dark shrink-0" href="/admin/login">
-            Go to Login
+          <Link className="button-dark shrink-0" href="/admin/logout">
+            Logout
           </Link>
         </div>
       </div>
 
       <div className="admin-planning-notice mt-8">
-        <p className="small-caps text-gold">Planning Mode</p>
+        <p className="small-caps text-gold">
+          {adminEmail ? "Authenticated admin session active" : "Planning Mode"}
+        </p>
         <p className="mt-2 text-sm leading-6 text-olive">
-          Supabase environment foundation prepared. Authentication connection is
-          next. Editing is currently disabled.
+          {adminEmail
+            ? `Logged in as ${adminEmail}. Editing is currently disabled.`
+            : "Admin session could not be displayed. Route protection will redirect unauthenticated users."}
         </p>
       </div>
 

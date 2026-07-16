@@ -26,6 +26,16 @@ export function getRequiredSupabasePublicEnv() {
   return env;
 }
 
+export function isAllowedAdminEmail(email: string | null | undefined) {
+  if (!email) {
+    return false;
+  }
+
+  const { adminAllowedEmails } = getSupabasePublicEnv();
+
+  return adminAllowedEmails.includes(email.trim().toLowerCase());
+}
+
 function parseAdminAllowedEmails(value: string | undefined) {
   if (!value) {
     return [];
