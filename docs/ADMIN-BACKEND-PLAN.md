@@ -1,11 +1,19 @@
 # Haaratimata Admin Backend Plan
 
 ## Current Phase
-Phase 13A: Admin foundation without Supabase connection.
+Phase 13B: Supabase environment and client foundation only.
 
-The admin section is currently a planning interface only. Authentication,
-database persistence, image upload, and product/content editing are intentionally
-not connected yet.
+Supabase packages and client helper files are prepared. Authentication, database
+persistence, image upload, and product/content editing are intentionally not
+connected yet.
+
+## Phase 13B
+- Supabase free project created.
+- Env variables added locally and in Vercel.
+- Supabase client helpers added.
+- No real auth/database/storage connected yet.
+- Service role key should not be exposed.
+- Next phase will connect admin login using Supabase Auth.
 
 ## Future Backend
 Recommended backend: Supabase
@@ -20,13 +28,14 @@ Recommended backend: Supabase
 ## Future Environment Variables
 - NEXT_PUBLIC_SUPABASE_URL
 - NEXT_PUBLIC_SUPABASE_ANON_KEY
-- SUPABASE_SERVICE_ROLE_KEY
 - ADMIN_ALLOWED_EMAILS
 - NEXT_PUBLIC_SITE_URL
 
 Do not add real values to GitHub.
 Use Vercel Environment Variables for production.
 Use .env.local for local development.
+Do not expose the Supabase service role key. If a service role key is ever
+needed later, keep it server-side only and never use it in browser code.
 
 ## Future Tables
 - profiles

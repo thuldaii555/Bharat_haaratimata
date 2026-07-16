@@ -53,9 +53,9 @@ export default function AdminDashboardPage() {
               Future management hub for Haaratimata.
             </h2>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-olive md:text-xl md:leading-9">
-              This dashboard organizes the admin areas that will later connect
-              to Supabase Auth, Postgres tables, and Storage. No editing,
-              upload, authentication, or database actions are active yet.
+              Supabase environment foundation prepared. Authentication
+              connection is next. No editing, upload, authentication, or
+              database actions are active yet.
             </p>
           </div>
           <Link className="button-dark shrink-0" href="/admin/login">
@@ -67,8 +67,8 @@ export default function AdminDashboardPage() {
       <div className="admin-planning-notice mt-8">
         <p className="small-caps text-gold">Planning Mode</p>
         <p className="mt-2 text-sm leading-6 text-olive">
-          Admin tools are prepared for future Supabase connection. Editing is
-          currently disabled.
+          Supabase environment foundation prepared. Authentication connection is
+          next. Editing is currently disabled.
         </p>
       </div>
 

@@ -5,11 +5,11 @@ export default function AdminLoginPage() {
         <div className="showroom-panel p-8 md:p-10">
           <p className="eyebrow mb-5 text-gold">Admin Access</p>
           <h2 className="font-serif text-5xl leading-[0.98] text-walnut md:text-6xl">
-            Login screen prepared for Supabase Auth.
+            Login screen prepared for the next auth phase.
           </h2>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-olive">
-            Admin authentication is not connected yet. Supabase Auth will be
-            added in the next phase.
+            Supabase environment foundation prepared. Authentication connection
+            is next.
           </p>
         </div>
 
@@ -50,8 +50,8 @@ export default function AdminLoginPage() {
             </button>
 
             <p id="admin-login-note" className="text-sm leading-6 text-olive">
-              Admin authentication is not connected yet. Supabase Auth will be
-              added in the next phase.
+              Supabase environment foundation prepared. Authentication
+              connection is next.
             </p>
           </form>
         </div>
