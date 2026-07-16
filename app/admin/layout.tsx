@@ -39,11 +39,31 @@ export default async function AdminLayout({ children }: { children: ReactNode })
             </span>
           </div>
 
-          <p className="mt-5 text-sm leading-6 text-olive">
-            {adminEmail
-              ? `Signed in as ${adminEmail}. Editing is currently disabled.`
-              : "Supabase Auth is connected for admin access. Editing is currently disabled."}
-          </p>
+          {adminEmail ? (
+            <div className="admin-planning-notice mt-5">
+              <p className="small-caps text-gold">Authenticated</p>
+              <p className="mt-2 text-sm leading-6 text-olive">
+                Signed in as: {adminEmail}
+              </p>
+              <p className="mt-1 text-sm leading-6 text-olive">
+                Editing currently disabled.
+              </p>
+              <Link className="button-dark mt-4 w-full" href="/admin/logout">
+                Sign out
+              </Link>
+            </div>
+          ) : (
+            <div className="admin-planning-notice mt-5">
+              <p className="small-caps text-gold">Planning Mode</p>
+              <p className="mt-2 text-sm leading-6 text-olive">
+                Supabase Auth is connected for admin access. Editing currently
+                disabled.
+              </p>
+              <Link className="button-light mt-4 w-full" href="/admin/login">
+                Admin Login
+              </Link>
+            </div>
+          )}
 
           <nav aria-label="Admin navigation" className="mt-6 grid gap-2">
             {adminNavItems.map((item) => (
@@ -52,16 +72,6 @@ export default async function AdminLayout({ children }: { children: ReactNode })
               </Link>
             ))}
           </nav>
-
-          {adminEmail ? (
-            <Link className="button-light mt-6 w-full" href="/admin/logout">
-              Logout
-            </Link>
-          ) : (
-            <Link className="button-light mt-6 w-full" href="/admin/login">
-              Admin Login
-            </Link>
-          )}
         </aside>
 
         <main>{children}</main>

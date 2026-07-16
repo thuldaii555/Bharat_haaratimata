@@ -18,6 +18,12 @@
 - Logout added.
 - Product CRUD, database tables, storage buckets, and image uploads remain pending.
 
+## Phase 13D
+- Admin auth UX cleaned up.
+- Sign out is clearly visible in the admin shell.
+- Route protection moved from middleware.ts to proxy.ts for Next 16.
+- Admin pages remain read-only.
+
 ## Next Phase
 - Decide database schema details.
 - Create Supabase tables after schema approval.

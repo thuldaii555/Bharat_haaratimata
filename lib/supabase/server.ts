@@ -55,7 +55,7 @@ function createSupabaseServerClientWithCookies(
   });
 }
 
-export function createSupabaseMiddlewareClient(request: NextRequest) {
+export function createSupabaseProxyClient(request: NextRequest) {
   const { supabaseUrl, supabaseAnonKey } = getSupabasePublicEnv();
 
   if (!supabaseUrl || !supabaseAnonKey) {

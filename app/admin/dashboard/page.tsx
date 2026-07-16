@@ -68,7 +68,7 @@ export default async function AdminDashboardPage() {
             </p>
           </div>
           <Link className="button-dark shrink-0" href="/admin/logout">
-            Logout
+            Sign out
           </Link>
         </div>
       </div>

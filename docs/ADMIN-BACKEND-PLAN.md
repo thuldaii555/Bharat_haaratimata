@@ -1,10 +1,11 @@
 # Haaratimata Admin Backend Plan
 
 ## Current Phase
-Phase 13C: Supabase Auth connected for admin login.
+Phase 13D: Admin auth UX and Next 16 cleanup.
 
-Supabase Auth is connected for admin login. Database persistence, image upload,
-and product/content editing are intentionally not connected yet.
+Supabase Auth is connected for admin login, admin route protection is active,
+and the auth shell has been cleaned up. Database persistence, image upload, and
+product/content editing are intentionally not connected yet.
 
 ## Phase 13B
 - Supabase free project created.
@@ -20,6 +21,12 @@ and product/content editing are intentionally not connected yet.
 - Admin pages protected.
 - Logout added.
 - Product/database/image features not connected yet.
+
+## Phase 13D
+- Admin auth UX cleaned up.
+- Sign out is clearly visible.
+- Next 16 proxy/middleware warning addressed by moving route protection to proxy.ts.
+- Admin pages remain read-only.
 
 ## Future Backend
 Recommended backend: Supabase
@@ -59,6 +66,7 @@ needed later, keep it server-side only and never use it in browser code.
 3. Install Supabase client - complete
 4. Connect admin login - complete
 5. Protect admin routes - complete
-6. Move products/categories to database
-7. Add image storage
-8. Connect inquiries
+6. Clean up admin auth UX and Next 16 proxy convention - complete
+7. Move products/categories to database
+8. Add image storage
+9. Connect inquiries

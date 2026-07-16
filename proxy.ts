@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
 
 import { isAllowedAdminEmail } from "@/lib/supabase/env";
-import { createSupabaseMiddlewareClient } from "@/lib/supabase/server";
+import { createSupabaseProxyClient } from "@/lib/supabase/server";
 
 const protectedAdminPaths = new Set([
   "/admin/dashboard",
@@ -13,11 +13,11 @@ const protectedAdminPaths = new Set([
   "/admin/site-content",
 ]);
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const middlewareClient = createSupabaseMiddlewareClient(request);
+  const proxyClient = createSupabaseProxyClient(request);
 
-  if (!middlewareClient) {
+  if (!proxyClient) {
     if (pathname === "/admin/login") {
       return NextResponse.next();
     }
@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
     );
   }
 
-  const { supabase, getResponse } = middlewareClient;
+  const { supabase, getResponse } = proxyClient;
   const {
     data: { user },
   } = await supabase.auth.getUser();
