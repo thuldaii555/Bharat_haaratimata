@@ -160,7 +160,7 @@ export default function AdminInquiriesPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
           Inquiry Management
         </h1>
@@ -169,6 +169,15 @@ export default function AdminInquiriesPage() {
           inquiries, custom design requests, product quote requests, and
           sustainability or fair trade questions. This area will later connect
           to the Contact Us form and quote request flows.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Workflow Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Inquiries will later connect to Supabase tables and protected admin
+          review tools. No real inquiry loading, reply, assignment, or status
+          update is active in this phase.
         </p>
       </div>
 
@@ -222,7 +231,7 @@ export default function AdminInquiriesPage() {
                 Prototype inquiry table.
               </h2>
             </div>
-            <button className="button-dark opacity-70" disabled type="button">
+            <button className="admin-disabled-button" disabled type="button">
               Add Inquiry
             </button>
           </div>
@@ -275,7 +284,7 @@ export default function AdminInquiriesPage() {
                     <div className="flex flex-wrap gap-2">
                       {actions.map((action) => (
                         <button
-                          className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                          className="admin-disabled-button"
                           disabled
                           key={action}
                           type="button"
@@ -348,7 +357,7 @@ export default function AdminInquiriesPage() {
           <div className="mt-8 flex flex-wrap gap-2">
             {actions.map((action) => (
               <button
-                className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                className="admin-disabled-button"
                 disabled
                 key={action}
                 type="button"

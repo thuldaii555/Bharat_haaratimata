@@ -52,7 +52,7 @@ export default function AdminImagesPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
           Image Library
         </h1>
@@ -60,6 +60,15 @@ export default function AdminImagesPage() {
           Future workspace for uploading, replacing, removing, and assigning
           images across the website. Image uploads will be connected later
           through secure storage and admin authentication.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Uploads Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Images will later connect to Supabase Storage and database asset
+          records. No upload, replace, remove, or assignment action is active in
+          this phase.
         </p>
       </div>
 
@@ -110,7 +119,7 @@ export default function AdminImagesPage() {
               <div className="flex flex-wrap gap-2">
                 {actions.map((action) => (
                   <button
-                    className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                    className="admin-disabled-button"
                     disabled
                     key={action}
                     type="button"

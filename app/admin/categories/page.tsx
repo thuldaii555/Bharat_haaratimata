@@ -38,7 +38,7 @@ export default function AdminCategoriesPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
           Category Management
         </h1>
@@ -46,6 +46,15 @@ export default function AdminCategoriesPage() {
           Future workspace for managing showroom category cards, category
           landing pages, category images, descriptions, display order, and
           active/inactive status.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Editing Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Categories will later connect to Supabase Auth, Postgres category
+          tables, and Storage-backed category imagery. No category CRUD is
+          active in this phase.
         </p>
       </div>
 
@@ -80,7 +89,7 @@ export default function AdminCategoriesPage() {
               </h2>
             </div>
             <button
-              className="button-dark opacity-70"
+              className="admin-disabled-button"
               disabled
               type="button"
             >
@@ -136,7 +145,7 @@ export default function AdminCategoriesPage() {
                     <div className="flex flex-wrap gap-2">
                       {actions.map((action) => (
                         <button
-                          className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                          className="admin-disabled-button"
                           disabled
                           key={action}
                           type="button"

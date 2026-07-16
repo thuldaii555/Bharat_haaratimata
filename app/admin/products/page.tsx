@@ -21,12 +21,21 @@ export default function AdminProductsPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl text-walnut">Product Management</h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-olive">
           Future admin workspace for managing showroom products, category
           placement, pricing, inventory status, image uploads, and product
           details. This page is static and does not perform CRUD operations.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Editing Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Products will later connect to Supabase Auth, Postgres product tables,
+          and Storage-backed product images. No product CRUD is active in this
+          phase.
         </p>
       </div>
 
@@ -99,7 +108,7 @@ export default function AdminProductsPage() {
                     <div className="flex flex-wrap gap-2">
                       {tableActions.map((action) => (
                         <button
-                          className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                          className="admin-disabled-button"
                           disabled
                           key={action}
                           type="button"

@@ -674,3 +674,56 @@ a {
 .group:hover .catalog-cta::after {
   width: 4rem;
 }
+
+.admin-shell {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 8%, rgba(184, 145, 75, 0.12), transparent 24rem),
+    radial-gradient(circle at 92% 4%, rgba(58, 42, 32, 0.08), transparent 26rem),
+    linear-gradient(180deg, rgba(255, 252, 245, 0.7), rgba(247, 243, 234, 0.92));
+}
+
+.admin-sidebar {
+  border: 1px solid rgba(58, 42, 32, 0.11);
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 245, 0.92), rgba(247, 243, 234, 0.76));
+  box-shadow: 0 22px 60px rgba(58, 42, 32, 0.09);
+}
+
+.admin-status-badge,
+.admin-disabled-button {
+  display: inline-flex;
+  min-height: 2.65rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.8rem;
+  padding-inline: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.admin-status-badge {
+  border: 1px solid rgba(184, 145, 75, 0.35);
+  background: rgba(184, 145, 75, 0.12);
+  color: var(--walnut);
+}
+
+.admin-planning-notice {
+  border: 1px solid rgba(184, 145, 75, 0.26);
+  border-radius: 1rem;
+  background:
+    linear-gradient(135deg, rgba(184, 145, 75, 0.1), rgba(255, 252, 245, 0.72));
+  color: var(--walnut);
+  padding: 1rem;
+}
+
+.admin-disabled-button {
+  cursor: not-allowed;
+  border: 1px solid rgba(58, 42, 32, 0.12);
+  background: rgba(217, 213, 204, 0.34);
+  color: rgba(119, 114, 95, 0.82);
+  box-shadow: none;
+  opacity: 1;
+}

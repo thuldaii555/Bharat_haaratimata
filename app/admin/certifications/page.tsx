@@ -51,7 +51,7 @@ export default function AdminCertificationsPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
           Certification Management
         </h1>
@@ -60,6 +60,15 @@ export default function AdminCertificationsPage() {
           verification details, and sustainability credentials. Do not display
           fake certification logos; official approved assets should be uploaded
           later.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Editing Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Certification assets will later connect to Supabase Storage and
+          database-backed display controls. No certification upload or editing
+          action is active in this phase.
         </p>
       </div>
 
@@ -110,7 +119,7 @@ export default function AdminCertificationsPage() {
               <div className="flex flex-wrap gap-2">
                 {actions.map((action) => (
                   <button
-                    className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                    className="admin-disabled-button"
                     disabled
                     key={action}
                     type="button"

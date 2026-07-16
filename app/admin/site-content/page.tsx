@@ -149,7 +149,7 @@ export default function AdminSiteContentPage() {
   return (
     <section className="section">
       <div className="showroom-panel p-8 md:p-10">
-        <p className="eyebrow mb-5 text-gold">Admin Architecture Placeholder</p>
+        <p className="eyebrow mb-5 text-gold">Planning Mode</p>
         <h1 className="font-serif text-5xl leading-[0.98] text-walnut md:text-7xl">
           Site Content Management
         </h1>
@@ -158,6 +158,15 @@ export default function AdminSiteContentPage() {
           trust strip content, gallery captions, sustainability content, trade
           page copy, and contact office details. Authorized administrators will
           manage copy here without editing code.
+        </p>
+      </div>
+
+      <div className="admin-planning-notice mt-8">
+        <p className="small-caps text-gold">Editing Disabled</p>
+        <p className="mt-2 text-sm leading-6 text-olive">
+          Site content will later connect to Supabase-backed content records and
+          draft/publish controls. No content editing, preview saving, or
+          publishing is active in this phase.
         </p>
       </div>
 
@@ -208,7 +217,7 @@ export default function AdminSiteContentPage() {
               <div className="flex flex-wrap gap-2">
                 {actions.map((action) => (
                   <button
-                    className="rounded-full border border-walnut/10 bg-ivory/72 px-3 py-2 text-xs uppercase tracking-[0.12em] text-olive opacity-70"
+                    className="admin-disabled-button"
                     disabled
                     key={action}
                     type="button"
@@ -231,7 +240,7 @@ export default function AdminSiteContentPage() {
                 Prototype content workflow.
               </h2>
             </div>
-            <button className="button-dark opacity-70" disabled type="button">
+            <button className="admin-disabled-button" disabled type="button">
               Add Content Block
             </button>
           </div>
